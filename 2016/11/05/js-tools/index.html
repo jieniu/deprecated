@@ -105,7 +105,7 @@
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/1-Dxaal-bYJ8mG1fFLlaQUEg.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/1-nUhYk9Mot6c6khOJTC4g1w.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/1-Y5gyN19hMnG91oVq51kKAw.png">
-<meta property="og:updated_time" content="2016-11-05T12:00:40.000Z">
+<meta property="og:updated_time" content="2016-11-05T13:41:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我终于理解了这些前端构建工具，相信你也可以">
 <meta name="twitter:description" content="版权申明：此文章无需授权即可转载，转载时请务必注明作者
@@ -419,12 +419,12 @@
 <h2 id="不要对新技术产生恐惧"><a href="#不要对新技术产生恐惧" class="headerlink" title="不要对新技术产生恐惧"></a>不要对新技术产生恐惧</h2><p>目前已经有太多的前端构建工具：Node, NPM, Grunt, Gulp, Bower, Webpack, Browserify, Yeoman, Brunch……很容易让人产生跟不上节奏的感觉。</p>
 <p>关键点就是不要害怕，所有这些工具都是为了让你更高效而设计的。</p>
 <p>要理解它们是什么，为什么用它们，怎么用它们，我们只需要理解以下几个概念。</p>
-<h3 id="概念-1——构建工具的核心作用“安装-vs-运行”"><a href="#概念-1——构建工具的核心作用“安装-vs-运行”" class="headerlink" title="概念#1——构建工具的核心作用“安装 vs.运行”"></a>概念#1——构建工具的核心作用“安装 vs.运行”</h3><p>构建工具做两件事：</p>
+<h3 id="概念-1——构建工具的核心作用“安装-vs-执行”"><a href="#概念-1——构建工具的核心作用“安装-vs-执行”" class="headerlink" title="概念#1——构建工具的核心作用“安装 vs.执行”"></a>概念#1——构建工具的核心作用“安装 vs.执行”</h3><p>构建工具做两件事：</p>
 <ol>
 <li>安装</li>
-<li>运行</li>
+<li>执行</li>
 </ol>
-<p>当你碰到一个新的工具，第一个问题应该是：“这个工具想要帮我安装还是运行？“</p>
+<p>当你碰到一个新的工具，第一个问题应该是：“这个工具想要帮我安装还是执行？“</p>
 <p>npm，Bower和Yeoman都属于”安装“工具，他们能把安装这件事做的很漂亮。他们可以安装前端库，例如Angular.js或React.js。它们可以在服务器上安装开发环境，它们可以安装测试库。他们甚至可以帮你安装其他的前端构建工具。<br><a id="more"></a></p>
 <blockquote>
 <p>“什么是bower？”</p>
@@ -435,7 +435,7 @@
 <p>——<a href="https://twitter.com/ddprrt/status/529909875347030016" target="_blank" rel="external">@ddprrt</a></p>
 </blockquote>
 <p>简短的说，它们可以安装你可以想象的和代码相关的东西。</p>
-<p>Grunt，Webpack，Require.js，Brunch和Gulp都是“运行”工具，它们比安装工具更复杂。它们的目标是自动化web开发中的体力活和容易出错的任务。运行的事情往往被称作“任务”。</p>
+<p>Grunt，Webpack，Require.js，Brunch和Gulp都是“执行”工具，它们比安装工具更复杂。它们的目标是自动化web开发中的体力活和容易出错的任务。执行的事情往往被称作“任务”。</p>
 <p>为了执行这些“任务”，需要使用它们各自生态系统中的包和插件。每个工具执行任务的方式有差别，它们不会做相同的事情。有些“执行”工具试图做你抛给它的所有事情，其他的专注于一件事，例如解决Javascript依赖（例如Browserify, Require.js）</p>
 <p>有时，在同一个项目中，可能会使用好几个这样的工具。</p>
 <p>这里有一个被“执行”工具自动化的任务列表：</p>
@@ -454,7 +454,7 @@
 <p>Node和npm落到我们的二分归纳法中，Node是执行工具，而npm是安装工具。</p>
 <p>npm可以安装像Angular.js或React.js之类的库。为了开发方便，它还可以安装一个服务器，从而在本地运行你的app。它甚至可以安装例如最小化你的代码的可执行工具。</p>
 <p>另一方面，Node是”执行“工具，例如运行Javascript文件，服务器等等。</p>
-<p>如果你刚开始学习，从Node+npm开始，并且多这两个工具上多花一些时间。当你的项目大到一定程度，你会遇到Node和npm自动化的限制，那时你再考虑使用其他的构建工具。</p>
+<p>如果你刚开始学习，从Node+npm开始，并且多在这两个工具上多花一些时间。当你的项目大到一定程度，你会遇到Node和npm自动化的限制，那时你再考虑使用其他的构建工具。</p>
 <h3 id="概念-3——有一种构建意味着你的应用已经就绪"><a href="#概念-3——有一种构建意味着你的应用已经就绪" class="headerlink" title="概念#3——有一种构建意味着你的应用已经就绪"></a>概念#3——有一种构建意味着你的应用已经就绪</h3><p>开发者经常把Javascript文件和CSS文件分成很多个文件，这样可以让我们写出模块化的代码，并且每个文件只完成一件事。一个文件只做一件事可以减少你的认知负载（如果你认为多个文件比起一个大文件来说会让你更困惑，试图在一个5000行的源文件上工作，我想你很快会改变你的想法的🙃）</p>
 <p>但是，当你的产品发布后，太多文件不是一个好事情，当一个用户访问你的网站，你的每一个文件都需要使用一个额外的HTTP请求，这会使你的网站加载速度变慢。</p>
 <p>作为补救，你可以为你的应用做一次“构建”，它会将所有CSS文件合并为一个文件，对于JavaScript文件也一样。结果是，你把文件大小和文件数最小化后，用户拿到的就是优化过的文件了，要这样做，你需要用一个构建工具。</p>
@@ -466,7 +466,7 @@
 <p><img src="http://oekyukinw.bkt.clouddn.com/1-nUhYk9Mot6c6khOJTC4g1w.png" alt="Your app in its build form"></p>
 <p>既然这样做仅仅只会节省用户几十毫秒的加载页面时间，你可能会想知道这样做到底值不值。可以这样说，如果你的网站只为少数一些人提供服务，你不需要关心这件事。构建工程仅仅只适用于大流量的网站（或者那些被认为即将成为大流量的网站😎）</p>
 <p>如果你刚刚学编程，或网站流量较小，这样做将不是太有价值。</p>
-<h3 id="概念-4——构建和运行的分界线比较模糊"><a href="#概念-4——构建和运行的分界线比较模糊" class="headerlink" title="概念#4——构建和运行的分界线比较模糊"></a>概念#4——构建和运行的分界线比较模糊</h3><p>没有一个工具是只做一件事且其他工具做其他的事，他们都会拥有构建和执行功能。但是大多数情况是，一个工具更趋向于构建或更趋向于执行。</p>
+<h3 id="概念-4——构建和执行的分界线比较模糊"><a href="#概念-4——构建和执行的分界线比较模糊" class="headerlink" title="概念#4——构建和执行的分界线比较模糊"></a>概念#4——构建和执行的分界线比较模糊</h3><p>没有一个工具是只做一件事且其他工具做其他的事，他们都会拥有构建和执行功能。但是大多数情况是，一个工具更趋向于构建或更趋向于执行。</p>
 <p>一个“安装”工具有时也会执行程序，npm经常这样做，npm也可以执行命令和脚本——不仅仅是安装文件。一种工具，就像Yeoman，在你的机器上安装预编译引用的应用，同时它也会按需动态生成新文件，模糊了安装和执行间的这条分界线。</p>
 <h3 id="概念-5——对于构建工具，没有唯一的组合"><a href="#概念-5——对于构建工具，没有唯一的组合" class="headerlink" title="概念#5——对于构建工具，没有唯一的组合"></a>概念#5——对于构建工具，没有唯一的组合</h3><p>在项目中使用哪些构建工具，完全取决于你自己。</p>
 <p>你可以选择不使用任何工具，仅仅记住复制，粘贴、最小化、开启服务、以及其它相关操作能够高效运作即可。</p>
@@ -478,8 +478,8 @@
 <p>我的建议是只学习你需要在你工作中涉及到的部分，其他的不学。</p>
 <p>最佳的学习新事物的办法是你有一个真实的任务去完成。例如，为了你的利益，不要学习Grunt怎么拷贝文件的。取而代之的是，直到你确切需要这样做的时候，再使用它来解决吧。</p>
 <p>记住：早期就把问题复杂化将会让你变慢。</p>
-<h3 id="概念-7——所有的构建工具拥有共同的目标：通过自动化所有体力劳动从而让你开心"><a href="#概念-7——所有的构建工具拥有共同的目标：通过自动化所有体力劳动从而让你开心" class="headerlink" title="概念#7——所有的构建工具拥有共同的目标：通过自动化所有体力劳动从而让你开心"></a>概念#7——所有的构建工具拥有共同的目标：通过自动化所有体力劳动从而让你开心</h3><p>当你发挥了你的构建工具的所有潜能，我把这种状态称作“构建工具涅磬”。这是一种当你保存一个文件，或运行一个命令，于是大量的任务便会自动执行的状态。</p>
-<p>如果你的工具仍然需要你手动移动文件，改变值，或者运行命令才能编译，那么你还没有达到“工具涅磬”的状态。</p>
+<h3 id="概念-7——所有的构建工具拥有共同的目标：通过自动化所有体力劳动从而让你开心"><a href="#概念-7——所有的构建工具拥有共同的目标：通过自动化所有体力劳动从而让你开心" class="headerlink" title="概念#7——所有的构建工具拥有共同的目标：通过自动化所有体力劳动从而让你开心"></a>概念#7——所有的构建工具拥有共同的目标：通过自动化所有体力劳动从而让你开心</h3><p>当你发挥了你的构建工具的所有潜能，我把这种状态称作“构建工具涅磬”。这是一种当你保存一个文件，或执行一个命令，于是大量的任务便会自动执行的状态。</p>
+<p>如果你的工具仍然需要你手动移动文件，改变值，或者执行命令才能编译，那么你还没有达到“工具涅磬”的状态。</p>
 <p>拥有构建工具的好处便是保存一个文件，可以引发你的应用的编译，并发送到浏览器从而刷新新的内容。这会显著的加速你的前端开发工作流。</p>
 <p>所以如何衡量你该付出多少努力在配置和设置构建工具上？很简单：只到它所做的事情让你高兴为止。</p>
 <h3 id="概念-8——不只是你，很多人都觉得这些工具的文档很糟糕"><a href="#概念-8——不只是你，很多人都觉得这些工具的文档很糟糕" class="headerlink" title="概念#8——不只是你，很多人都觉得这些工具的文档很糟糕"></a>概念#8——不只是你，很多人都觉得这些工具的文档很糟糕</h3><p>事实上，很多这些工具的文档都不足，经常让我们做一些基本的任务都变得很难。</p>
@@ -693,7 +693,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#不要对新技术产生恐惧"><span class="nav-number">1.</span> <span class="nav-text">不要对新技术产生恐惧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-1——构建工具的核心作用“安装-vs-运行”"><span class="nav-number">1.1.</span> <span class="nav-text">概念#1——构建工具的核心作用“安装 vs.运行”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-2——Node和npm是所有构建工具的祖先"><span class="nav-number">1.2.</span> <span class="nav-text">概念#2——Node和npm是所有构建工具的祖先</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-3——有一种构建意味着你的应用已经就绪"><span class="nav-number">1.3.</span> <span class="nav-text">概念#3——有一种构建意味着你的应用已经就绪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-4——构建和运行的分界线比较模糊"><span class="nav-number">1.4.</span> <span class="nav-text">概念#4——构建和运行的分界线比较模糊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-5——对于构建工具，没有唯一的组合"><span class="nav-number">1.5.</span> <span class="nav-text">概念#5——对于构建工具，没有唯一的组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-6——构建工具的学习曲线很陡峭，所以只需学习什么是必须的"><span class="nav-number">1.6.</span> <span class="nav-text">概念#6——构建工具的学习曲线很陡峭，所以只需学习什么是必须的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-7——所有的构建工具拥有共同的目标：通过自动化所有体力劳动从而让你开心"><span class="nav-number">1.7.</span> <span class="nav-text">概念#7——所有的构建工具拥有共同的目标：通过自动化所有体力劳动从而让你开心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-8——不只是你，很多人都觉得这些工具的文档很糟糕"><span class="nav-number">1.8.</span> <span class="nav-text">概念#8——不只是你，很多人都觉得这些工具的文档很糟糕</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#不要对新技术产生恐惧"><span class="nav-number">1.</span> <span class="nav-text">不要对新技术产生恐惧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-1——构建工具的核心作用“安装-vs-执行”"><span class="nav-number">1.1.</span> <span class="nav-text">概念#1——构建工具的核心作用“安装 vs.执行”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-2——Node和npm是所有构建工具的祖先"><span class="nav-number">1.2.</span> <span class="nav-text">概念#2——Node和npm是所有构建工具的祖先</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-3——有一种构建意味着你的应用已经就绪"><span class="nav-number">1.3.</span> <span class="nav-text">概念#3——有一种构建意味着你的应用已经就绪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-4——构建和执行的分界线比较模糊"><span class="nav-number">1.4.</span> <span class="nav-text">概念#4——构建和执行的分界线比较模糊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-5——对于构建工具，没有唯一的组合"><span class="nav-number">1.5.</span> <span class="nav-text">概念#5——对于构建工具，没有唯一的组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-6——构建工具的学习曲线很陡峭，所以只需学习什么是必须的"><span class="nav-number">1.6.</span> <span class="nav-text">概念#6——构建工具的学习曲线很陡峭，所以只需学习什么是必须的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-7——所有的构建工具拥有共同的目标：通过自动化所有体力劳动从而让你开心"><span class="nav-number">1.7.</span> <span class="nav-text">概念#7——所有的构建工具拥有共同的目标：通过自动化所有体力劳动从而让你开心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-8——不只是你，很多人都觉得这些工具的文档很糟糕"><span class="nav-number">1.8.</span> <span class="nav-text">概念#8——不只是你，很多人都觉得这些工具的文档很糟糕</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
