@@ -102,7 +102,7 @@
 当">
 <meta property="og:image" content="http://img.blog.csdn.net/20140104132342390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb0ZlbmdZYUppZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20140104132211109?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb0ZlbmdZYUppZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2016-11-07T15:49:43.000Z">
+<meta property="og:updated_time" content="2016-11-07T15:52:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在iterm2中设置自动远程登录（附跳板机攻略）">
 <meta name="twitter:description" content="版权申明：此文章无需授权即可转载，转载时请务必注明作者
@@ -421,10 +421,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/expect  </div><div class="line">  </div><div class="line">set timeout 30  </div><div class="line">spawn ssh [lindex $argv 0]@[lindex $argv 1]  </div><div class="line">expect &#123;  </div><div class="line">    &quot;(yes/no)?&quot;  </div><div class="line">    &#123;send &quot;yes\n&quot;;exp_continue&#125;  </div><div class="line">    &quot;password:&quot;  </div><div class="line">    &#123;send &quot;[lindex $argv 2]\n&quot;&#125;  </div><div class="line">&#125;  </div><div class="line">interact</div></pre></td></tr></table></figure>
 <p>该脚本计较简单，需要三个参数，第一个参数是远程用户名，第二个参数是远程地址，第三个参数是密码</p>
 <ol>
-<li><p>将expect脚本copy到$PATH下（例如/usr/local/bin）</p>
-</li>
-<li><p>在iterm2中设置登录命令为1中的脚本，用command+o的方式呼出profiles，点击Edit Profiles，按照下图的方式配好后，双击可以图1中的列表即可自动登录<br><img src="http://img.blog.csdn.net/20140104132342390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb0ZlbmdZYUppZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="图1"></p>
-</li>
+<li>将expect脚本copy到$PATH下（例如/usr/local/bin）</li>
+<li>在iterm2中设置登录命令为1中的脚本，用command+o的方式呼出profiles，点击Edit Profiles，按照下图的方式配好后，双击可以图1中的列表即可自动登录<br><img src="http://img.blog.csdn.net/20140104132342390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb0ZlbmdZYUppZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="图1"></li>
 </ol>
 <p><img src="http://img.blog.csdn.net/20140104132211109?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb0ZlbmdZYUppZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="图2"></p>
 <h2 id="有跳板机情况"><a href="#有跳板机情况" class="headerlink" title="有跳板机情况"></a>有跳板机情况</h2><p>俺(前)公司的跳板机策略如下，不同公司的环境不一样，也许某些同学可以进行参考</p>
