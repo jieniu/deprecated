@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/qps.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/mysqlconnections.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/innodb.png">
-<meta property="og:updated_time" content="2016-11-25T13:39:19.000Z">
+<meta property="og:updated_time" content="2016-11-25T13:46:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用ElasticSearch监控MySQL">
 <meta name="twitter:description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
@@ -418,7 +418,7 @@
 </ul>
 <p>配置中最重要的是queries字段，定义了你要监控的内容，这些内容就是一张表，通过mysql的查询语句获得，这张表只有两个字段VARIABLE_NAME和VARIABLE_VALUE，分别代表你要监控的监测名和监测值，其中value有两种类型</p>
 <ol>
-<li>第一种是差值类型，因为global status中的一些数据是不断累加的，所以要得到1s内的数据，需要用当前时间取到的值减去前一个间隔取到的值，然后除以间隔的秒数，当然这些都不需要你来完成，你只需要在监测名后面加一个后缀<strong>DELTA即可：CONCAT(VARIABLE_NAME, ‘</strong>DELTA’)</li>
+<li>第一种是差值类型，因为global status中的一些数据是不断累加的，所以要得到1s内的数据，需要用当前时间取到的值减去前一个间隔取到的值，然后除以间隔的秒数，当然这些都不需要你来完成，你只需要在监测名后面加一个后缀<code>__DELTA</code>即可：<code>CONCAT(VARIABLE_NAME, &#39;__DELTA&#39;)</code></li>
 <li>第二种是像内存值这样的不需要进行差值操作的类型。</li>
 </ol>
 <p>总之使用很简单，看一下配置，然后马上就try吧</p>
