@@ -97,7 +97,7 @@
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/qps.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/mysqlconnections.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/innodb.png">
-<meta property="og:updated_time" content="2016-11-25T13:25:45.000Z">
+<meta property="og:updated_time" content="2016-11-25T13:29:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用ElasticSearch监控MySQL">
 <meta name="twitter:description" content="介绍本文是一个使用ELK来监控mysql的介绍，基本监控了一些关键指标，当然根据业务的不同，可能有不同的指标需求，但使用该方法监控，原理不会变化，非常适合入门。ELK是一个非常强大的软件组合，在github上有开源，star数大的惊人，感兴趣的朋友可以了解下，这套工具学习曲线比较陡峭，推荐使用本文提到的mysqlbeat这类简单的工具作为采集工具开始，一开始先不使用官方提供的beat，一方面是因">
@@ -447,7 +447,7 @@
 </ul>
 <p>同样，缓存命中情况也只需要缓存访问量和磁盘访问量两个参数，这一组字段不好记，记住读缓存次数的变量名比读磁盘次数的变量名多个requests后缀就好了。</p>
 <ul>
-<li>MyISAM：读命中 <code>KEY_READ_REQUESTS / (KEY_READS + KEY_READ_REQUESTS)；写命中 KEY_WRITE_REQUESTS / (KEY_WRITE_REQUESTS + KEY_WRITES)</code></li>
+<li>MyISAM：读命中 <code>KEY_READ_REQUESTS / (KEY_READS + KEY_READ_REQUESTS)</code>；写命中 <code>KEY_WRITE_REQUESTS / (KEY_WRITE_REQUESTS + KEY_WRITES)</code></li>
 <li>InnoDB：缓存命中 <code>INNODB_BUFFER_POOL_READ_REQUESTS</code> / <code>(INNODB_BUFFER_POOL_READ_REQUESTS + INNODB_BUFFER_POOL_READS)</code></li>
 </ul>
 <p>需要注意的是，缓存的读/写命中率应该以最近一段时间（比如10s）为基准（作者取的是累积值），这样数据更真实，而基数太大会把数据压得更平滑，不利于监测突发情况。</p>
