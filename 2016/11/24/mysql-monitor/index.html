@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/qps.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/mysqlconnections.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/innodb.png">
-<meta property="og:updated_time" content="2016-11-25T14:17:51.000Z">
+<meta property="og:updated_time" content="2016-11-25T14:18:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用ElasticSearch监控MySQL">
 <meta name="twitter:description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
@@ -459,7 +459,7 @@
 <li>MyISAM：读命中 <code>KEY_READ_REQUESTS / (KEY_READS + KEY_READ_REQUESTS)</code>；写命中 <code>KEY_WRITE_REQUESTS / (KEY_WRITE_REQUESTS + KEY_WRITES)</code></li>
 <li>InnoDB：缓存命中 <code>INNODB_BUFFER_POOL_READ_REQUESTS</code> / <code>(INNODB_BUFFER_POOL_READ_REQUESTS + INNODB_BUFFER_POOL_READS)</code></li>
 </ul>
-<p>需要注意的是，缓存的读/写命中率应该以最近一段时间（比如10s）为基准（作者取的是累积值），这样数据更真实，而基数太大会把数据压得更平滑，不利于监测突发情况。</p>
+<p>需要注意的是，缓存的读/写命中率应该以最近一段时间（比如10s）为基准（而作者取的是累积值），这样数据更真实，而基数太大会把数据压得更平滑，不利于监测突发情况。</p>
 <h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3><ol>
 <li>主从同步延迟，其实mysqlbeat已经实现了，只是老是出现类型冲突，所以就无法可视化，需要查代码定位</li>
 <li>mysql错误，这种以表格的形式展示更好，对错误语句、原因根据错误次数倒序展示</li>
