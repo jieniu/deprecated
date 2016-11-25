@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/qps.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/mysqlconnections.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/innodb.png">
-<meta property="og:updated_time" content="2016-11-25T14:06:34.000Z">
+<meta property="og:updated_time" content="2016-11-25T14:17:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用ElasticSearch监控MySQL">
 <meta name="twitter:description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
@@ -451,8 +451,8 @@
 </ol>
 <p>缓存使用情况需要两个参数，缓存使用大小和缓存总大小</p>
 <ul>
-<li><code>MyISAM：KEY_BLOCKED_USED / (KEY_BLOCKED_UNUSED + KEY_BLOCKED_USED)</code></li>
-<li><code>InnoDB：INNODB_BUFFER_POOL_PAGES_DATA / (INNODB_BUFFER_POOL_PAGES_FREE + INNODB_BUFFER_POOL_PAGES_DATA)</code></li>
+<li>MyISAM：<code>KEY_BLOCKED_USED / (KEY_BLOCKED_UNUSED + KEY_BLOCKED_USED)</code></li>
+<li>InnoDB：<code>INNODB_BUFFER_POOL_PAGES_DATA / (INNODB_BUFFER_POOL_PAGES_FREE + INNODB_BUFFER_POOL_PAGES_DATA)</code></li>
 </ul>
 <p>同样，缓存命中情况也只需要缓存访问量和磁盘访问量两个参数，这一组字段不好记，记住读缓存次数的变量名比读磁盘次数的变量名多个requests后缀就好了。</p>
 <ul>
