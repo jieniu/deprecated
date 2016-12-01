@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="macOS,效率," />
+  <meta name="keywords" content="想法," />
 
 
 
@@ -86,29 +86,28 @@
 
 
 
-<meta name="description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
+<meta name="description" content="几个月前看了几个超级大V的文章，他们都不约而同的在一段时间内鼓励读者们开始写作，他们说
 
-这篇文章是自己在3年前写的，发现还没有过时，便再次发表在自己的网站上
-最近在mac中折腾ssh自动登录的问题，不自动登录每次输入命令太痛苦了，采取的方案是expect脚本的方式，其实选择这种方案而不是在远程服务器上保存key的方式主要是因为公司限制了在跳板机上保存私有数据的">
+写作可以锻炼你的思维能力写作可以解除自身的焦虑写作是一种创作写作是一种社交，可以认识更多优秀的人
+
+总之写作的好处很多，我被拥有这种能力所吸引，期待有一天，自己也能够像这些大V一样，能够坚持写作10年以上，也能够写出深刻的文章。可是几个月过去了，这一切都停留在蓄势待发的阶段，迟迟没有开始，也许不知道从何开始，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何在iterm2中设置自动远程登录（附跳板机攻略）">
-<meta property="og:url" content="http://jieniu.me/2016/11/07/item2-autologin/index.html">
+<meta property="og:title" content="我们为什么要写作">
+<meta property="og:url" content="http://jieniu.me/2016/11/30/why-write/index.html">
 <meta property="og:site_name" content="解牛的博客">
-<meta property="og:description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
+<meta property="og:description" content="几个月前看了几个超级大V的文章，他们都不约而同的在一段时间内鼓励读者们开始写作，他们说
 
-这篇文章是自己在3年前写的，发现还没有过时，便再次发表在自己的网站上
-最近在mac中折腾ssh自动登录的问题，不自动登录每次输入命令太痛苦了，采取的方案是expect脚本的方式，其实选择这种方案而不是在远程服务器上保存key的方式主要是因为公司限制了在跳板机上保存私有数据的">
-<meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/login-1203603_640.png">
-<meta property="og:image" content="http://img.blog.csdn.net/20140104132342390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb0ZlbmdZYUppZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20140104132211109?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb0ZlbmdZYUppZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2016-12-01T06:15:36.000Z">
+写作可以锻炼你的思维能力写作可以解除自身的焦虑写作是一种创作写作是一种社交，可以认识更多优秀的人
+
+总之写作的好处很多，我被拥有这种能力所吸引，期待有一天，自己也能够像这些大V一样，能够坚持写作10年以上，也能够写出深刻的文章。可是几个月过去了，这一切都停留在蓄势待发的阶段，迟迟没有开始，也许不知道从何开始，">
+<meta property="og:updated_time" content="2016-11-30T16:06:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何在iterm2中设置自动远程登录（附跳板机攻略）">
-<meta name="twitter:description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
+<meta name="twitter:title" content="我们为什么要写作">
+<meta name="twitter:description" content="几个月前看了几个超级大V的文章，他们都不约而同的在一段时间内鼓励读者们开始写作，他们说
 
-这篇文章是自己在3年前写的，发现还没有过时，便再次发表在自己的网站上
-最近在mac中折腾ssh自动登录的问题，不自动登录每次输入命令太痛苦了，采取的方案是expect脚本的方式，其实选择这种方案而不是在远程服务器上保存key的方式主要是因为公司限制了在跳板机上保存私有数据的">
-<meta name="twitter:image" content="http://oekyukinw.bkt.clouddn.com/login-1203603_640.png">
+写作可以锻炼你的思维能力写作可以解除自身的焦虑写作是一种创作写作是一种社交，可以认识更多优秀的人
+
+总之写作的好处很多，我被拥有这种能力所吸引，期待有一天，自己也能够像这些大V一样，能够坚持写作10年以上，也能够写出深刻的文章。可是几个月过去了，这一切都停留在蓄势待发的阶段，迟迟没有开始，也许不知道从何开始，">
 
 
 
@@ -129,10 +128,10 @@
 
 
 
-  <link rel="canonical" href="http://jieniu.me/2016/11/07/item2-autologin/"/>
+  <link rel="canonical" href="http://jieniu.me/2016/11/30/why-write/"/>
 
 
-  <title> 如何在iterm2中设置自动远程登录（附跳板机攻略） | 解牛的博客 </title>
+  <title> 我们为什么要写作 | 解牛的博客 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -334,7 +333,7 @@
             
             
               
-                如何在iterm2中设置自动远程登录（附跳板机攻略）
+                我们为什么要写作
               
             
           </h1>
@@ -346,8 +345,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-07T23:11:30+08:00" content="2016-11-07">
-              2016-11-07
+            <time itemprop="dateCreated" datetime="2016-11-30T22:15:16+08:00" content="2016-11-30">
+              2016-11-30
             </time>
           </span>
 
@@ -360,8 +359,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/categories/想法/" itemprop="url" rel="index">
+                    <span itemprop="name">想法</span>
                   </a>
                 </span>
 
@@ -376,8 +375,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/07/item2-autologin/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/07/item2-autologin/" itemprop="commentsCount"></span>
+                <a href="/2016/11/30/why-write/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/30/why-write/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -405,37 +404,27 @@
       
 
       
-        <p><img src="http://oekyukinw.bkt.clouddn.com/login-1203603_640.png" alt="题图"></p>
+        <p>几个月前看了几个超级大V的文章，他们都不约而同的在一段时间内鼓励读者们开始写作，他们说</p>
 <blockquote>
-<p><em>版权申明：</em><br><em>此文章首发于公众号<code>程序员在深圳</code>，搜索 studycode 即可关注</em><br><em>本文无需授权即可转载，转载时请务必注明作者</em></p>
+<p>写作可以锻炼你的思维能力<br>写作可以解除自身的焦虑<br>写作是一种创作<br>写作是一种社交，可以认识更多优秀的人</p>
 </blockquote>
-<p>这篇文章是自己在3年前写的，发现还没有过时，便再次发表在自己的网站上</p>
-<p>最近在mac中折腾ssh自动登录的问题，不自动登录每次输入命令太痛苦了，采取的方案是expect脚本的方式，其实选择这种方案而不是在远程服务器上保存key的方式主要是因为公司限制了在跳板机上保存私有数据的权限，如果想了解如何不输入密码登录远程机器的原理，请看这篇<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="external">博客</a></p>
-<p>当然，OS X上的终端可以使用iterm2，这样配置后便利性不比$99的secureCRT差        </p>
-<h2 id="一般情况"><a href="#一般情况" class="headerlink" title="一般情况"></a>一般情况</h2><p>首先介绍下不通过跳板机进行登录的方式，准备：</p>
-<ul>
-<li>写一个expect脚本<a id="more"></a>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/expect  </div><div class="line">  </div><div class="line">set timeout 30  </div><div class="line">spawn ssh [lindex $argv 0]@[lindex $argv 1]  </div><div class="line">expect &#123;  </div><div class="line">    &quot;(yes/no)?&quot;  </div><div class="line">    &#123;send &quot;yes\n&quot;;exp_continue&#125;  </div><div class="line">    &quot;password:&quot;  </div><div class="line">    &#123;send &quot;[lindex $argv 2]\n&quot;&#125;  </div><div class="line">&#125;  </div><div class="line">interact</div></pre></td></tr></table></figure>
-<p>该脚本比较简单，需要三个参数，第一个参数是远程用户名，第二个参数是远程地址，第三个参数是密码</p>
-<ul>
-<li>将expect脚本copy到$PATH下（例如/usr/local/bin）</li>
-<li>在iterm2中设置登录命令为1中的脚本，用command+o的方式呼出profiles，点击Edit Profiles，按照下图的方式配好后，双击可以图1中的列表即可自动登录</li>
-</ul>
-<p><img src="http://img.blog.csdn.net/20140104132342390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb0ZlbmdZYUppZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="图1"></p>
-<p><img src="http://img.blog.csdn.net/20140104132211109?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvb0ZlbmdZYUppZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="图2"></p>
-<h2 id="有跳板机情况"><a href="#有跳板机情况" class="headerlink" title="有跳板机情况"></a>有跳板机情况</h2><p>俺(前)公司的跳板机策略如下，不同公司的环境不一样，也许某些同学可以进行参考</p>
+<p>总之写作的好处很多，我被拥有这种能力所吸引，期待有一天，自己也能够像这些大V一样，能够坚持写作10年以上，也能够写出深刻的文章。可是几个月过去了，这一切都停留在蓄势待发的阶段，迟迟没有开始，也许不知道从何开始，也许害怕自己像以前一样，没做太多心理准备就开始，最后却不了了之。</p>
+<p>今天早上起得很早，看了一篇关于写作的文章，文章里说：写作就是记录自己的思考，如果不马上记录下来，你就会忘记你所思考的内容，即你也很难写出一篇完整的文章。不管说得对不对，我认为至少对于新手来说，应该是有用的，我们大脑确实是时时刻刻都会产生不同的想法，但也确实很难回想起一个月前、一周前、甚至一天前的想法，如果不记录下来，用此时此刻的一些想法来形成文章是很有难度的，这也是我们为什么惧怕写文章的真正原因，有了想法就记录下来，日积月累会形成自己的写作素材，能够做到有话可说，有东西可写，我想，坚持写文章这件事就可以实现。</p>
+<p>现在我们解决了可执行性（怎么坚持写文章）的问题，下面就来谈一下”为什么”的问题，看了很多作家、大V的文章，虽然当时我也特别渴望去做这件事，但毕竟那是别人给这件事赋予的意义，也许别人认为这样或那样的意义已经能够产生足够的动机，但真正能让自己认为这件事非常重要，非常有动力，还需要自己去思考，去说服自己，下面就来谈下对我来说，写作意味着什么</p>
+<h2 id="写作，是对自身的检查"><a href="#写作，是对自身的检查" class="headerlink" title="写作，是对自身的检查"></a>写作，是对自身的检查</h2><p>我是做互联网开发的，主要从事后端服务器相关工作，后端不像前端，有丰富的界面，相反，我们只能通过古老的字符命令和计算机交互，但服务器程序是每个互联网公司最重要的部分，它承载着每个公司所有的服务，例如，微信服务器集群，每时每刻都要接入上十亿的终端，作为中国人来说，应该最有体会，任何事情，只要数量一上来，就会变得相当复杂，但正式因为这样的国情，才造就了腾讯、阿里、12306这样能够并行处理海量数据的服务平台。</p>
+<p>我对后端服务确实有一定的了解，我也知道，能够保障后端服务持续运作的有利手段就是记录日志，记录日志也是最简单的编程技巧，可能刚学编程的人都知道这个程序，差不多就是著名的<code>Hello World!</code>那样的语法，为什么它这么简单却这么重要，因为</p>
 <ol>
-<li>跳板机上不能存放任何文件，/tmp下可以方临时文件，每天会定时清掉</li>
-<li>copy文件方向只能是local-&gt;跳板机-&gt;remote的方向，即local可以push/pull跳板机上的文件，跳板机可以push/pull远程上的文件</li>
-<li>向跳板机登录前需要通过邮件/短信的方式获取passcode，这是除密码之外的额外的验证方式</li>
+<li>我们会在程序出错的地方输出错误日志，方便排查问题</li>
+<li>我们会将程序的当前状态以日志的形式输出，通过这些信息，我们可以提前判断是否需要增加一台服务器，做到未雨绸缪</li>
+<li>对于每一个客户产生的流水，我们必须为他保留流水日志，一是方便他查看自己的操作记录，也可以帮助我们查看某些用户是否出现异常数据</li>
 </ol>
-<p>其实跳板机的自动远程登录与非跳板机的差异在expect脚本的编写上，其他的照搬即可，直接把代码贴出来吧</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/expect</div><div class="line"></div><div class="line"># 参数1：远程host；参数2：远程password  </div><div class="line">if &#123; $argc != 2 &#125; &#123;</div><div class="line">    send_user &quot;Usage: host password\n&quot;</div><div class="line">    exit</div><div class="line">&#125;</div><div class="line"></div><div class="line">set host [lindex $argv 0]</div><div class="line">set pw [lindex $argv 1]</div><div class="line"></div><div class="line"></div><div class="line">set TERMSERV yourjumpserver # 跳板机服务器</div><div class="line">set USER jumpserveruser # 用户名</div><div class="line">set PASSWORD jumperserverpasswd # 跳板机密码</div><div class="line"></div><div class="line">set fd [open /place/to/passcode r] # 本地存放passcode的地方</div><div class="line">gets $fd pc</div><div class="line">close $fd</div><div class="line"></div><div class="line"># Start the session</div><div class="line">catch &#123;spawn ssh -l $USER $TERMSERV&#125; # 登录跳板机</div><div class="line"></div><div class="line"># Login</div><div class="line">expect &quot;*assword:*&quot; &#123; send &quot;$PASSWORD\r&quot; &#125;</div><div class="line">expect &quot;*passcode:*&quot; &#123; send &quot;$pc\r&quot; &#125; </div><div class="line"></div><div class="line">#通过跳板机登录线上机器</div><div class="line">expect &quot;*hostname*&quot; &#123; send &quot;ssh -l $USER $host\r&quot; &#125; # hostname为你跳板机的名字</div><div class="line">expect &#123;</div><div class="line">    &quot;(yes/no)?&quot;</div><div class="line">    &#123;send &quot;yes\n&quot;;exp_continue&#125;</div><div class="line">    &quot;*assword:*&quot;</div><div class="line">    &#123;send &quot;$pw\n&quot;&#125;</div><div class="line">&#125;</div><div class="line">expect &quot;*$host*&quot; &#123; send &quot;cd ~\r&quot;; interact &#125;</div></pre></td></tr></table></figure>
-<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><p>如果在使用过程中，碰到了连接远程机器非常慢的情况，一般是因为开启了<br>ControlMaster ，它会复用ssh连接，可以看下<a href="https://www.ibm.com/developerworks/community/blogs/IBMzOS/entry/20150502?lang=en" target="_blank" rel="external">这篇文章</a>，如果不想复用，可以通过修改 ~/.ssh/config配置文件将其关闭：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#ControlMaster auto</div><div class="line">#ControlPath ~/.ssh/master-%r@%h:%p%r</div></pre></td></tr></table></figure></p>
-<p>因为目前公司的生产环境和之前的又不一样，这个代码属于旧代码了，所以如果有朋友在使用过程中发现问题，请帮忙纠正，谢谢</p>
-
+<p>由此可见日志的重要性，假设没有日志，我们基本上不清楚我们的程序在干嘛，这是一件非常恐怖的事情，我相信任何程序员都不会为了偷懒而不去做这件事。</p>
+<p>计算机是用日志来帮助它正常运行的，没有日志，你就摸不着它的”生命”轨迹，同样道理，如果我们没有记录的习惯，我们也几乎记不得我们的生活轨迹，套用李笑来老师常说的话，就是</p>
+<blockquote>
+<p>时间过得飞快，我们却全然不知，这是一件多么可怕的事情</p>
+</blockquote>
+<p>相反，如果我们记录生活中的想法，我们可以不断的总结，回顾，辩证的看待自己想法哪些好，哪些不好，有什么理论去支撑，从而不断改善，当你有了这些积累后，你便可以将它们写成文章，这时候你会发现，写文章并不是目的，检查自己，完善自己才是目的，写文章只是你的一个手段，所以，为了更好的自己，现在就开始写作吧。</p>
+<h2 id="写作给自己腾出了思考的时间"><a href="#写作给自己腾出了思考的时间" class="headerlink" title="写作给自己腾出了思考的时间"></a>写作给自己腾出了思考的时间</h2><h2 id="写作，能够帮助下一代"><a href="#写作，能够帮助下一代" class="headerlink" title="写作，能够帮助下一代"></a>写作，能够帮助下一代</h2>
       
     </div>
 
@@ -462,9 +451,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/macOS/" rel="tag">#macOS</a>
-          
-            <a href="/tags/效率/" rel="tag">#效率</a>
+            <a href="/tags/想法/" rel="tag">#想法</a>
           
         </div>
       
@@ -473,17 +460,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/05/js-tools/" rel="next" title="我终于理解了这些前端开发工具，相信你也可以">
-                <i class="fa fa-chevron-left"></i> 我终于理解了这些前端开发工具，相信你也可以
+              <a href="/2016/11/24/mysql-monitor/" rel="next" title="用ElasticSearch监控MySQL">
+                <i class="fa fa-chevron-left"></i> 用ElasticSearch监控MySQL
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/11/zero-hero/" rel="prev" title="前端开发，从草根到英雄（第一部分）">
-                前端开发，从草根到英雄（第一部分） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -535,8 +518,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/07/item2-autologin/"
-           data-title="如何在iterm2中设置自动远程登录（附跳板机攻略）" data-url="http://jieniu.me/2016/11/07/item2-autologin/">
+      <div class="ds-thread" data-thread-key="2016/11/30/why-write/"
+           data-title="我们为什么要写作" data-url="http://jieniu.me/2016/11/30/why-write/">
       </div>
     
   </div>
@@ -647,7 +630,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一般情况"><span class="nav-number">1.</span> <span class="nav-text">一般情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有跳板机情况"><span class="nav-number">2.</span> <span class="nav-text">有跳板机情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解决"><span class="nav-number">3.</span> <span class="nav-text">问题解决</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写作，是对自身的检查"><span class="nav-number">1.</span> <span class="nav-text">写作，是对自身的检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写作给自己腾出了思考的时间"><span class="nav-number">2.</span> <span class="nav-text">写作给自己腾出了思考的时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写作，能够帮助下一代"><span class="nav-number">3.</span> <span class="nav-text">写作，能够帮助下一代</span></a></li></ol></div>
             
           </div>
         </section>
