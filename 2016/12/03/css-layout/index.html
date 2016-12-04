@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="CSS,HTML," />
 
 
 
@@ -86,34 +86,18 @@
 
 
 
-<meta name="description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
-
-即便像我这样非常有经验的开发者，对于一些前端开发工具，也会产生疑惑。解决办法是在概念层面上理解它们是如何工作的，以及如何共同工作的。
-这篇文章是我个人对于前端开发工具的理解，抛开代码层面，我们从理念层面来谈它们是如何完成它们的工作的。
-不要对新技术产生恐惧目前已经有太多的前">
+<meta name="description" content="1. 价值我是一个对后端有一定经验的程序员，一直从事相关的工作，不过我对前端也挺感兴趣的，总想学点前端的技术，做点东西来玩玩，比如做个写周报的页面，这样就不需要花时间去整理周报内容；再比如利用这些知识定制开源的监控页面，让它更贴近我们的需求，或者利用前端做一些运维自动化工作。当然目前想到的这些对自身的改变都不大，无非是多学习一种程序语言，但我心里一直笃信，如果能够同时掌握前端技术，对我整个人的价">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我终于理解了这些前端开发工具，相信你也可以">
-<meta property="og:url" content="http://jieniu.me/2016/11/05/js-tools/index.html">
+<meta property="og:title" content="前端应该怎么学（含CSS布局练习）">
+<meta property="og:url" content="http://jieniu.me/2016/12/03/css-layout/index.html">
 <meta property="og:site_name" content="解牛的博客">
-<meta property="og:description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
-
-即便像我这样非常有经验的开发者，对于一些前端开发工具，也会产生疑惑。解决办法是在概念层面上理解它们是如何工作的，以及如何共同工作的。
-这篇文章是我个人对于前端开发工具的理解，抛开代码层面，我们从理念层面来谈它们是如何完成它们的工作的。
-不要对新技术产生恐惧目前已经有太多的前">
-<meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/1-L4TYDiuYB5-EK8SG2RjHHQ.png">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1933644-9b4e5cc228eb1a98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1933644-a06791a6398dcb8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1933644-c8c9e3bf0f0c0bc7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1933644-6f554589a181f8a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2016-11-17T16:56:06.000Z">
+<meta property="og:description" content="1. 价值我是一个对后端有一定经验的程序员，一直从事相关的工作，不过我对前端也挺感兴趣的，总想学点前端的技术，做点东西来玩玩，比如做个写周报的页面，这样就不需要花时间去整理周报内容；再比如利用这些知识定制开源的监控页面，让它更贴近我们的需求，或者利用前端做一些运维自动化工作。当然目前想到的这些对自身的改变都不大，无非是多学习一种程序语言，但我心里一直笃信，如果能够同时掌握前端技术，对我整个人的价">
+<meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/business-1839876_1280.jpg">
+<meta property="og:updated_time" content="2016-12-04T07:29:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我终于理解了这些前端开发工具，相信你也可以">
-<meta name="twitter:description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
-
-即便像我这样非常有经验的开发者，对于一些前端开发工具，也会产生疑惑。解决办法是在概念层面上理解它们是如何工作的，以及如何共同工作的。
-这篇文章是我个人对于前端开发工具的理解，抛开代码层面，我们从理念层面来谈它们是如何完成它们的工作的。
-不要对新技术产生恐惧目前已经有太多的前">
-<meta name="twitter:image" content="http://oekyukinw.bkt.clouddn.com/1-L4TYDiuYB5-EK8SG2RjHHQ.png">
+<meta name="twitter:title" content="前端应该怎么学（含CSS布局练习）">
+<meta name="twitter:description" content="1. 价值我是一个对后端有一定经验的程序员，一直从事相关的工作，不过我对前端也挺感兴趣的，总想学点前端的技术，做点东西来玩玩，比如做个写周报的页面，这样就不需要花时间去整理周报内容；再比如利用这些知识定制开源的监控页面，让它更贴近我们的需求，或者利用前端做一些运维自动化工作。当然目前想到的这些对自身的改变都不大，无非是多学习一种程序语言，但我心里一直笃信，如果能够同时掌握前端技术，对我整个人的价">
+<meta name="twitter:image" content="http://oekyukinw.bkt.clouddn.com/business-1839876_1280.jpg">
 
 
 
@@ -134,10 +118,10 @@
 
 
 
-  <link rel="canonical" href="http://jieniu.me/2016/11/05/js-tools/"/>
+  <link rel="canonical" href="http://jieniu.me/2016/12/03/css-layout/"/>
 
 
-  <title> 我终于理解了这些前端开发工具，相信你也可以 | 解牛的博客 </title>
+  <title> 前端应该怎么学（含CSS布局练习） | 解牛的博客 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -339,7 +323,7 @@
             
             
               
-                我终于理解了这些前端开发工具，相信你也可以
+                前端应该怎么学（含CSS布局练习）
               
             
           </h1>
@@ -351,8 +335,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-05T19:39:59+08:00" content="2016-11-05">
-              2016-11-05
+            <time itemprop="dateCreated" datetime="2016-12-03T22:04:59+08:00" content="2016-12-03">
+              2016-12-03
             </time>
           </span>
 
@@ -365,8 +349,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/翻译/" itemprop="url" rel="index">
-                    <span itemprop="name">翻译</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -381,8 +365,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/05/js-tools/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/05/js-tools/" itemprop="commentsCount"></span>
+                <a href="/2016/12/03/css-layout/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/03/css-layout/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -410,81 +394,22 @@
       
 
       
-        <p><img src="http://oekyukinw.bkt.clouddn.com/1-L4TYDiuYB5-EK8SG2RjHHQ.png" alt="题图"></p>
-<blockquote>
-<p><em>版权申明：</em><br><em>此文章首发于公众号<code>程序员在深圳</code>，搜索 studycode 即可关注</em><br><em>本文无需授权即可转载，转载时请务必注明作者</em></p>
-</blockquote>
-<p>即便像我这样非常有经验的开发者，对于一些前端开发工具，也会产生疑惑。解决办法是在概念层面上理解它们是如何工作的，以及如何共同工作的。</p>
-<p>这篇文章是我个人对于前端开发工具的理解，抛开代码层面，我们从理念层面来谈它们是如何完成它们的工作的。</p>
-<h2 id="不要对新技术产生恐惧"><a href="#不要对新技术产生恐惧" class="headerlink" title="不要对新技术产生恐惧"></a>不要对新技术产生恐惧</h2><p>目前已经有太多的前端开发工具：Node, NPM, Grunt, Gulp, Bower, Webpack, Browserify, Yeoman, Brunch……很容易让人产生跟不上节奏的感觉。</p>
-<p>关键点就是不要害怕，所有这些工具都是为了让你更高效而设计的。</p>
-<p>要理解它们是什么，为什么用它们，怎么用它们，我们只需要理解以下几个概念。</p>
-<h3 id="概念-1——开发工具的核心作用“安装-vs-执行”"><a href="#概念-1——开发工具的核心作用“安装-vs-执行”" class="headerlink" title="概念#1——开发工具的核心作用“安装 vs.执行”"></a>概念#1——开发工具的核心作用“安装 vs.执行”</h3><p>开发工具做两件事：</p>
+        <p><img src="http://oekyukinw.bkt.clouddn.com/business-1839876_1280.jpg" alt="题图"></p>
+<h2 id="1-价值"><a href="#1-价值" class="headerlink" title="1. 价值"></a>1. 价值</h2><p>我是一个对后端有一定经验的程序员，一直从事相关的工作，不过我对前端也挺感兴趣的，总想学点前端的技术，做点东西来玩玩，比如做个写周报的页面，这样就不需要花时间去整理周报内容；再比如利用这些知识定制开源的监控页面，让它更贴近我们的需求，或者利用前端做一些运维自动化工作。当然目前想到的这些对自身的改变都不大，无非是多学习一种程序语言，但我心里一直笃信，如果能够同时掌握前端技术，对我整个人的价值提升是无法想象的。</p>
+<p>前后端原本是不分家的，一个公司刚开始的时候，不管前端还是后端代码，应该是一个人，或少数几个人一起做出来的，只是随着公司发展过程中管理的需要和分工协作的原因，前后端分离这件事才越来越明显，导致现在许多人一进入公司，就只会做前端，或另一部分只会做后端，而且保持十几年不变，在我看来，作为一个后端程序员，如果不了解前端，属于技能上的缺失，不仅无法独立完成一个完整的产品，而且在思维上不会站在前端程序员的位置上思考，即将来如果成为一个系统设计师，设计出来的软件也很有可能存在缺陷，反之亦然。这也是为什么整个行业越来越鼓吹全栈工程师，这个概念并不是虚幻不实际的，而是企业对人才的一种实实在在的需求，即人们常说的复合人才的一种，全栈工程师对于一个企业来说价值巨大。</p>
+<h2 id="2-失败经历"><a href="#2-失败经历" class="headerlink" title="2. 失败经历"></a>2. 失败经历</h2><p>我学习前端开发断断续续也有几年时间，总是想着自己有不错的基础，应该不费吹灰之力就可以学会，有一两次还做了些计划，例如每天跟着<a href="http://www.w3school.com.cn/" target="_blank" rel="external">w3school</a>学半个小时，相信自己十几天之内就可以掌握，但一方面因为自己工作也比较忙，另一方面因为计划不太实际，没有收到相应的成效，最终都以从入门到放弃告终。最近花了些时间学习学习的方法，再次总结之前的失败原因，发现以前失败主要是因为自己的重视程度不高，加上前端技术栈确实庞大，如果随随便便就可以学到的技能，那其实本身它的含金量就不高；学习任何一个新技能都应该注重它的学习过程，首先要分析这个技能的主要框架，然后针对框架的每一个知识点，做大量的实践及练习，这样你才能够’快速’学会一门新技能。</p>
+<p>曾经有过这样的经验，公司要开发一个云存储系统，为了完成这个需求，我引进了一个开源的云存储项目，并将其进行修改，让它符合公司的需求，这个开源的项目自带一些运维可视化的工具，是用AngularJs和BootStrap做成的，当时我也花了些时间看懂了这些代码，以为自己以后就会使用这些技术来做可视化了；但真正要开发新的项目时，我并不能很快利用AngularJs和BootStrap为我所用，即便花很多时间做得和以前一模一样，我也很难在上面添砖加瓦，或做得比以前更好。根本原因在于我没有了解前端开发的全貌，不知道某些技术的主要用途是怎样的，只看代码而不实践也是无法让技术成为自身技能的。</p>
+<h2 id="领悟"><a href="#领悟" class="headerlink" title="领悟"></a>领悟</h2><p>直到最近，我在github上发现了<a href="https://www.freecodecamp.com/" target="_blank" rel="external">free code camp社区</a>，全世界最大的学习前端开发的社区，我同时也鼓励零基础的老婆在上面学习，希望有一天她可以通过学习一门编程语言体会到成长的乐趣。在fcc中国社区，作为自愿者，给他们翻译了几篇前端学习的入门文章：</p>
 <ol>
-<li>安装</li>
-<li>执行</li>
+<li><a href="http://www.jianshu.com/p/95ae0d144ef5" target="_blank" rel="external">Things you probably didn’t know you could do with Chrome’s Developer Console</a></li>
+<li><a href="http://www.jianshu.com/p/014f9a89ee84" target="_blank" rel="external">I finally made sense of front end build tools. You can, too.</a></li>
+<li><a href="http://www.jianshu.com/p/8e639ae10dfe" target="_blank" rel="external">From Zero to Front-end Hero (Part 1)</a></li>
+<li><a href="http://www.jianshu.com/p/e2be2bb9d229" target="_blank" rel="external">From Zero to Front-end Hero (Part 2)</a></li>
 </ol>
-<p>当你碰到一个新的工具，第一个问题应该是：“这个工具想要帮我安装还是执行？”<br><a id="more"></a><br>npm，Bower和Yeoman都属于“安装”工具，他们能把安装这件事做的很漂亮。他们可以安装前端库，例如Angular.js或React.js。它们可以在服务器上安装开发环境，它们可以安装测试库。他们甚至可以帮你安装其他的前端开发工具。</p>
-<blockquote>
-<p>“什么是bower？”</p>
-<p>”一个包管理器，用npm安装它。”</p>
-<p>“什么是npm？”</p>
-<p>“一个包管理器，你可以用brew安装它。”</p>
-<p>“什么是brew？”…</p>
-<p>——<a href="https://twitter.com/ddprrt/status/529909875347030016" target="_blank" rel="external">@ddprrt</a></p>
-</blockquote>
-<p>简短的说，它们可以安装你可以想象的和代码相关的东西。</p>
-<p>Grunt，Webpack，Require.js，Brunch和Gulp都是“执行”工具，它们比安装工具更复杂。它们的目标是自动化web开发中的体力活和容易出错的任务。“执行”的事情往往被称作“任务”。</p>
-<p>为了执行这些“任务”，需要使用它们各自生态系统中的包和插件。每个工具执行任务的方式有差别，它们不会做相同的事情。有些“执行”工具试图做你抛给它的所有事情，其他的专注于一件事，例如解决Javascript依赖（例如Browserify, Require.js）</p>
-<p>有时，在同一个项目中，可能会使用好几个这样的工具。</p>
-<p>这里有一个被“执行”工具自动化的任务列表：</p>
-<ol>
-<li>在文件中替换一个文本字符串</li>
-<li>创建文件夹，并将文件移入</li>
-<li>一键执行单元测试</li>
-<li>保存文件时刷新浏览器</li>
-<li>合并所有Javascript为一个文件，所有CSS文件为一个文件</li>
-<li>最小化我的Javascript和CSS文件</li>
-<li>在html页面中修改<code>&lt;script&gt;</code>标签的位置</li>
-</ol>
-<p>当你理解了工具的安装功能和执行功能，对它们进行分类也变得非常容易：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1933644-9b4e5cc228eb1a98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分类"></p>
-<h3 id="概念-2——Node和npm是所有开发工具的祖先"><a href="#概念-2——Node和npm是所有开发工具的祖先" class="headerlink" title="概念#2——Node和npm是所有开发工具的祖先"></a>概念#2——Node和npm是所有开发工具的祖先</h3><p>Node和npm可以安装和执行所有这些开发工具，所以你的项目会有它们的身影。正因为这一点，大多数开发者在求助于其他工具前，都会尽可能的使用这两款工具。</p>
-<p>Node和npm落到我们的二分归纳法中，Node是执行工具，而npm是安装工具。</p>
-<p>npm可以安装像Angular.js或React.js之类的库。为了开发方便，它还可以安装一个服务器，从而在本地运行你的app。它甚至可以安装例如最小化你的代码的可执行工具。</p>
-<p>另一方面，Node是“执行”工具，例如运行Javascript文件，服务器等等。</p>
-<p>如果你刚开始学习，从Node+npm开始，建议你在这两个工具上多花一些时间。当你的项目大到一定程度，你会遇到Node和npm自动化的限制，那时你再考虑使用其他的开发工具。</p>
-<h3 id="概念-3——有一种构建意味着你的应用已经就绪"><a href="#概念-3——有一种构建意味着你的应用已经就绪" class="headerlink" title="概念#3——有一种构建意味着你的应用已经就绪"></a>概念#3——有一种构建意味着你的应用已经就绪</h3><p>开发者经常把Javascript文件和CSS文件分成很多个文件，这样可以让我们写出模块化的代码，并且每个文件只完成一件事。一个文件只做一件事可以减少你的认知负担（如果你认为多个文件比起一个大文件来说会让你更困惑，试图在一个5000行的源文件上工作，我想你很快会改变你的想法的🙃）</p>
-<p>但是，当你的产品发布后，太多文件不是一个好事情，当一个用户访问你的网站，你的每一个文件都需要使用一个额外的HTTP请求，这会使你的网站加载速度变慢。</p>
-<p>作为补救，你可以为你的应用做一次“构建”，它会将所有CSS文件合并为一个文件，对于JavaScript文件也一样。结果是，你把文件大小和文件数最小化后，用户拿到的就是优化过的文件了，要这样做，你需要用一个构建工具。</p>
-<p>下图是一个开发中的应用代码截图，注意到它拥有5个<code>&lt;script&gt;</code>标签和3个<code>&lt;link&gt;</code>标签，如果你注意到左边，你可以看到DEVELOPMENT文件夹下有10个文件</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1933644-a06791a6398dcb8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Your app in development"></p>
-<p>同时下图是相同的应用，只不过被构建工具施展了“魔法”。</p>
-<p>注意到我们是怎么只有一个<code>&lt;script&gt;</code>标签和一个<code>&lt;link&gt;</code>标签的？和之前DEVELOPMENT下有10个文件比起来，现在只有4个文件。</p>
-<p>应用每行都是一样的，只不过我们将其压缩到一个优雅的小包里，我们称之为“build”。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1933644-c8c9e3bf0f0c0bc7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Your app in its build form"></p>
-<p>既然这样做仅仅只会节省用户几十毫秒的加载页面时间，你可能会想知道这样做到底值不值。可以这样说，如果你的网站只为少数一些人提供服务，你不需要关心这件事。构建工程仅仅只适用于大流量的网站（或者那些被认为即将成为大流量的网站😎）</p>
-<p>如果你刚刚学编程，或网站流量较小，这样做将不是太有价值。</p>
-<h3 id="概念-4——安装和执行的分界线比较模糊"><a href="#概念-4——安装和执行的分界线比较模糊" class="headerlink" title="概念#4——安装和执行的分界线比较模糊"></a>概念#4——安装和执行的分界线比较模糊</h3><p>没有一个工具是只做一件事且其他工具做其他的事，他们都会拥有安装和执行功能。但是大多数情况是，一个工具更趋向于安装或更趋向于执行。</p>
-<p>一个“安装”工具有时也会执行程序，npm经常这样做，npm也可以执行命令和脚本——不仅仅是安装文件。一种工具，就像Yeoman，在你的机器上安装预编译引用的应用，同时它也会按需动态生成新文件，这些工具模糊了安装和执行间的这条分界线。</p>
-<h3 id="概念-5——对于开发工具，没有唯一的组合"><a href="#概念-5——对于开发工具，没有唯一的组合" class="headerlink" title="概念#5——对于开发工具，没有唯一的组合"></a>概念#5——对于开发工具，没有唯一的组合</h3><p>在项目中使用哪些开发工具，完全取决于你自己。</p>
-<p>你可以选择不使用任何工具，仅仅保证复制，粘贴、最小化、开启服务、以及其它相关操作能够高效运作即可。</p>
-<p>或者你仅仅只是用Node和npm来完成这些工作。对于初学者来说可以满足，但是当你的工程增长到一定程度，你可能会感觉到体力劳动越来越多。</p>
-<p>这时你或许可以选择Node及npm上游的几个工具。所以你可以把Node和npm作为你自己的核心，也许还可以加上Grunt+Bower或Webpack或Gulp+Bower。</p>
-<p>使用Node+npm上面的几种组合中的一种或几种，可以让你的工程中的大部分任务自动化，代价是学习这些工具的学习曲线很陡峭。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1933644-6f554589a181f8a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Build Tools in order of increasing complexity, but decreasing tediousness"></p>
-<h3 id="概念-6——开发工具的学习曲线很陡峭，所以只需学习什么是必须的"><a href="#概念-6——开发工具的学习曲线很陡峭，所以只需学习什么是必须的" class="headerlink" title="概念#6——开发工具的学习曲线很陡峭，所以只需学习什么是必须的"></a>概念#6——开发工具的学习曲线很陡峭，所以只需学习什么是必须的</h3><p>开发一个应用足够难，你可能会学习一门新语言或者一个新的框架，或者你有比较取巧的商业逻辑，而合并一个开发工具可能会把额外的一层错综复杂的事物加到你的项目中。问题就在于写开发工具相关的代码的人并不属于你的团队。</p>
-<p>我的建议是只学习你需要在你工作中涉及到的部分，其他的不学。</p>
-<p>最佳的学习新事物的办法是你有一个真实的任务去完成。例如，为了你的利益，不要学习Grunt怎么拷贝文件的。取而代之的是，直到你确切需要这样做的时候，再使用它来解决吧。</p>
-<p>记住：早期就把问题复杂化将会让你变慢。</p>
-<h3 id="概念-7——所有的开发工具拥有共同的目标：通过将所有体力劳动自动化从而让你开心"><a href="#概念-7——所有的开发工具拥有共同的目标：通过将所有体力劳动自动化从而让你开心" class="headerlink" title="概念#7——所有的开发工具拥有共同的目标：通过将所有体力劳动自动化从而让你开心"></a>概念#7——所有的开发工具拥有共同的目标：通过将所有体力劳动自动化从而让你开心</h3><p>当你发挥了你的开发工具的所有潜能，我把这种状态称作“开发工具涅磬”。这是一种当你保存一个文件，或运行一个命令，于是大量的任务便会自动执行的状态。</p>
-<p>如果你的工具仍然需要你手动移动文件，改变值，或者运行命令才能编译，那么你还没有达到“工具涅磬”的状态。</p>
-<p>拥有开发工具的好处便是保存一个文件，可以引发你的应用的编译，并发送到浏览器从而刷新新的内容。这会显著的加速你的前端开发工作流。</p>
-<p>所以如何衡量你该付出多少努力在配置和设置开发工具上？很简单：只到它所做的事情让你高兴为止。</p>
-<h3 id="概念-8——不只是你，很多人都觉得这些工具的文档很糟糕"><a href="#概念-8——不只是你，很多人都觉得这些工具的文档很糟糕" class="headerlink" title="概念#8——不只是你，很多人都觉得这些工具的文档很糟糕"></a>概念#8——不只是你，很多人都觉得这些工具的文档很糟糕</h3><p>事实上，很多这些工具的文档都不足，经常让我们做一些基本的任务都变得很难。</p>
-<p>预先定义好的文档非常之少，你会看到很多不同的操作都导致同样的错误——在StackOverflow上经常看到回答的是同一个问题。</p>
-<p>即便文档少这件事非常厌烦，但这些工具仍然可以增强你的代码技巧，并实现了很多创造性的事情。</p>
-<p>原文：<a href="https://medium.freecodecamp.com/making-sense-of-front-end-build-tools-3a1b3a87043b#.hpbycrwz3" target="_blank" rel="external">https://medium.freecodecamp.com/making-sense-of-front-end-build-tools-3a1b3a87043b#.hpbycrwz3</a><br>作者：<a href="https://medium.freecodecamp.com/@roneesh" target="_blank" rel="external">@roneesh</a> 翻译：<a href="http://www.jieniu.me" target="_blank" rel="external">jieniu</a></p>
+<p>在翻译的过程中，其实对我帮助比较大的是英语能力的提升，让我专门腾出时间来利用英语进行翻译工作。其中最后两个翻译的文章，是点击量最多的，反映了翻译水平比以前有了提升，同时这两篇本身质量也非常高。其原因在于文章给初学者规划出了一个版图，读者拿着这个版图，对每个版图分别进行实践，就可以把其中的知识据为己有，注意，如果你只看文章而不实践，是没有用的，知识不会因为你看了文章而自动钻到你的脑袋里。</p>
+<p>所以，说到这里，最佳的学习前端的方式是实践，而最佳的实践其实文章中已经说了：依葫芦画瓢，即把例子原封不动的克隆一遍。当然尽量不要ctrlC + ctrlV。</p>
+<p><a href="http://www.jianshu.com/p/8e639ae10dfe" target="_blank" rel="external">From Zero to Front-end Hero</a>系列真的不错，我现在已经按照文中的路线在练习，从布局开始，已经学会了基本的布局方式，以及知道了平时看到的一些交互式页面，其实是通过CSS的技术做出来的，例如Media Query技术可以自动适应pc浏览器和移动端浏览器。关于布局的练习，我把它保留在了我自己的<a href="http://codepen.io/jieniu/full/ENQmXL/" target="_blank" rel="external">CodePen</a>中，有兴趣的朋友可以去看下，里面都有源码，相信你也可以做到，原布局练习教程在<a href="http://learnlayout.com/" target="_blank" rel="external">这里</a>。</p>
+<p>希望本文可以给你带来帮助，如果你喜欢这篇文章，可以将其分享到社交网络中，如果你有任何问题，可以在文章后留言，或者通过社交网站找到我。</p>
 
       
     </div>
@@ -512,7 +437,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+            <a href="/tags/HTML/" rel="tag">#HTML</a>
           
         </div>
       
@@ -521,17 +448,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/06/chrome-console/" rel="next" title="那些你不知道的，可以用Chrome's Developer Console完成的事">
-                <i class="fa fa-chevron-left"></i> 那些你不知道的，可以用Chrome's Developer Console完成的事
+              <a href="/2016/11/24/mysql-monitor/" rel="next" title="用ElasticSearch监控MySQL">
+                <i class="fa fa-chevron-left"></i> 用ElasticSearch监控MySQL
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/07/item2-autologin/" rel="prev" title="如何在iterm2中设置自动远程登录（附跳板机攻略）">
-                如何在iterm2中设置自动远程登录（附跳板机攻略） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -583,8 +506,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/05/js-tools/"
-           data-title="我终于理解了这些前端开发工具，相信你也可以" data-url="http://jieniu.me/2016/11/05/js-tools/">
+      <div class="ds-thread" data-thread-key="2016/12/03/css-layout/"
+           data-title="前端应该怎么学（含CSS布局练习）" data-url="http://jieniu.me/2016/12/03/css-layout/">
       </div>
     
   </div>
@@ -695,7 +618,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#不要对新技术产生恐惧"><span class="nav-number">1.</span> <span class="nav-text">不要对新技术产生恐惧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-1——开发工具的核心作用“安装-vs-执行”"><span class="nav-number">1.1.</span> <span class="nav-text">概念#1——开发工具的核心作用“安装 vs.执行”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-2——Node和npm是所有开发工具的祖先"><span class="nav-number">1.2.</span> <span class="nav-text">概念#2——Node和npm是所有开发工具的祖先</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-3——有一种构建意味着你的应用已经就绪"><span class="nav-number">1.3.</span> <span class="nav-text">概念#3——有一种构建意味着你的应用已经就绪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-4——安装和执行的分界线比较模糊"><span class="nav-number">1.4.</span> <span class="nav-text">概念#4——安装和执行的分界线比较模糊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-5——对于开发工具，没有唯一的组合"><span class="nav-number">1.5.</span> <span class="nav-text">概念#5——对于开发工具，没有唯一的组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-6——开发工具的学习曲线很陡峭，所以只需学习什么是必须的"><span class="nav-number">1.6.</span> <span class="nav-text">概念#6——开发工具的学习曲线很陡峭，所以只需学习什么是必须的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-7——所有的开发工具拥有共同的目标：通过将所有体力劳动自动化从而让你开心"><span class="nav-number">1.7.</span> <span class="nav-text">概念#7——所有的开发工具拥有共同的目标：通过将所有体力劳动自动化从而让你开心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-8——不只是你，很多人都觉得这些工具的文档很糟糕"><span class="nav-number">1.8.</span> <span class="nav-text">概念#8——不只是你，很多人都觉得这些工具的文档很糟糕</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-价值"><span class="nav-number">1.</span> <span class="nav-text">1. 价值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-失败经历"><span class="nav-number">2.</span> <span class="nav-text">2. 失败经历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#领悟"><span class="nav-number">3.</span> <span class="nav-text">领悟</span></a></li></ol></div>
             
           </div>
         </section>
