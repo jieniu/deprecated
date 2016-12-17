@@ -86,21 +86,27 @@
 
 
 
-<meta name="description" content="使用ElasticSearch将近3个月了，在使用过程中，陆陆续续踩了不少坑，每次觉得无法逾越时，心里都想放弃，一是因为这东西要完全掌握不是那么容易，需要花很多时间；二是如果继续使用曾经用过的zabbix，说不定可以很快满足眼前的需求，从而可以抽身做其他事情。但坚持下来，就一定能从坑里爬起来，从而对这个系统更加了解，并利用这头”猛兽”帮助我做更多事情。原因很简单，ElasticSearch除了是">
+<meta name="description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
+
+使用ElasticSearch将近3个月了，在使用过程中，陆陆续续踩了不少坑，每次觉得无法逾越时，心里都想放弃，一是因为这东西要完全掌握不是那么容易，需要花很多时间；二是如果继续使用曾经用过的zabbix，说不定可以很快满足眼前的需求，从而可以抽身做其他事情。但坚持下来，就">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用ElasticSearch踩过的坑">
 <meta property="og:url" content="http://jieniu.me/2016/12/17/es-hole/index.html">
 <meta property="og:site_name" content="解牛的博客">
-<meta property="og:description" content="使用ElasticSearch将近3个月了，在使用过程中，陆陆续续踩了不少坑，每次觉得无法逾越时，心里都想放弃，一是因为这东西要完全掌握不是那么容易，需要花很多时间；二是如果继续使用曾经用过的zabbix，说不定可以很快满足眼前的需求，从而可以抽身做其他事情。但坚持下来，就一定能从坑里爬起来，从而对这个系统更加了解，并利用这头”猛兽”帮助我做更多事情。原因很简单，ElasticSearch除了是">
+<meta property="og:description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
+
+使用ElasticSearch将近3个月了，在使用过程中，陆陆续续踩了不少坑，每次觉得无法逾越时，心里都想放弃，一是因为这东西要完全掌握不是那么容易，需要花很多时间；二是如果继续使用曾经用过的zabbix，说不定可以很快满足眼前的需求，从而可以抽身做其他事情。但坚持下来，就">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/dash.jpg">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/slide.jpg">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/old-struct.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/new-struct.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/accesslog1.png">
-<meta property="og:updated_time" content="2016-12-17T16:22:51.000Z">
+<meta property="og:updated_time" content="2016-12-17T16:24:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用ElasticSearch踩过的坑">
-<meta name="twitter:description" content="使用ElasticSearch将近3个月了，在使用过程中，陆陆续续踩了不少坑，每次觉得无法逾越时，心里都想放弃，一是因为这东西要完全掌握不是那么容易，需要花很多时间；二是如果继续使用曾经用过的zabbix，说不定可以很快满足眼前的需求，从而可以抽身做其他事情。但坚持下来，就一定能从坑里爬起来，从而对这个系统更加了解，并利用这头”猛兽”帮助我做更多事情。原因很简单，ElasticSearch除了是">
+<meta name="twitter:description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
+
+使用ElasticSearch将近3个月了，在使用过程中，陆陆续续踩了不少坑，每次觉得无法逾越时，心里都想放弃，一是因为这东西要完全掌握不是那么容易，需要花很多时间；二是如果继续使用曾经用过的zabbix，说不定可以很快满足眼前的需求，从而可以抽身做其他事情。但坚持下来，就">
 <meta name="twitter:image" content="http://oekyukinw.bkt.clouddn.com/dash.jpg">
 
 
@@ -399,6 +405,9 @@
 
       
         <p><img src="http://oekyukinw.bkt.clouddn.com/dash.jpg" alt="题图"></p>
+<blockquote>
+<p><em>版权申明：</em><br><em>此文章首发于公众号<code>程序员在深圳</code>，搜索 studycode 即可关注</em><br><em>本文无需授权即可转载，转载时请务必注明作者</em></p>
+</blockquote>
 <p>使用ElasticSearch将近3个月了，在使用过程中，陆陆续续踩了不少坑，每次觉得无法逾越时，心里都想放弃，一是因为这东西要完全掌握不是那么容易，需要花很多时间；二是如果继续使用曾经用过的zabbix，说不定可以很快满足眼前的需求，从而可以抽身做其他事情。但坚持下来，就一定能从坑里爬起来，从而对这个系统更加了解，并利用这头”猛兽”帮助我做更多事情。原因很简单，ElasticSearch除了是一个分布式数据库，还是一个扩展性和可用性都很强的近实时搜索引擎。</p>
 <p>目前为止，踩过以下几个坑：</p>
 <ol>
