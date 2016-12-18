@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/old-struct.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/new-struct.png">
 <meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/accesslog1.png">
-<meta property="og:updated_time" content="2016-12-17T16:25:48.000Z">
+<meta property="og:updated_time" content="2016-12-18T02:43:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用ElasticSearch踩过的坑">
 <meta name="twitter:description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，转载时请务必注明作者
@@ -451,7 +451,7 @@
 <p>根据以上理论，我对集群做了如下更改，额外选取3个独立的机器作为Master节点，修改elasticsearch.yml配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">node.master = true</div><div class="line">node.data = false</div><div class="line">discovery.zen.minimum_master_nodes = 2</div></pre></td></tr></table></figure>
 <p>修改其他节点配置，将其设置为DataNode，最后挨个重启</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node.master = false</div><div class="line">node.data = ture</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node.master = false</div><div class="line">node.data = true</div></pre></td></tr></table></figure>
 <h2 id="Logstash吞吐量问题"><a href="#Logstash吞吐量问题" class="headerlink" title="Logstash吞吐量问题"></a>Logstash吞吐量问题</h2><p>在使用了新的架构后，我发现了当流量上来后，Redis的队列会持续增长，消费速度跟不上生产速度，造成的问题是数据在Redis中堆积，图表展示有大量的延迟。解决这个问题有以下几个思路</p>
 <ol>
 <li>可能是ES插入速度太慢，需要调整参数提升插入性能</li>
