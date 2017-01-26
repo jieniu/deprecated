@@ -1,0 +1,1109 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="imZUUDJok1t89eYtaOMV0qQ1nWw1iBM3ZwT0SrzsZhY" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Vim," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，甚至无需保留以上版权声明
+
+一. Vim是什么都说程序员只用两种编辑器，一种是编辑器之神Vim，一种是神的编辑器Emacs，可现实生活中，我发现真正用这两种编辑器的人很少，所以我开始有点怀疑这句话的真实性。
+刚毕业那会，我对实际的软件开发了解甚少，于是糊里糊涂的进入了服务器开发领域，现在回想起来真">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim最少必要知识">
+<meta property="og:url" content="http://jieniu.me/2017/01/27/vim/index.html">
+<meta property="og:site_name" content="解牛的博客">
+<meta property="og:description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，甚至无需保留以上版权声明
+
+一. Vim是什么都说程序员只用两种编辑器，一种是编辑器之神Vim，一种是神的编辑器Emacs，可现实生活中，我发现真正用这两种编辑器的人很少，所以我开始有点怀疑这句话的真实性。
+刚毕业那会，我对实际的软件开发了解甚少，于是糊里糊涂的进入了服务器开发领域，现在回想起来真">
+<meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/vime.png">
+<meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/hjkl.jpg">
+<meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/move2.gif">
+<meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/visual_mode.gif">
+<meta property="og:image" content="http://oekyukinw.bkt.clouddn.com/Vimpics.jpg">
+<meta property="og:updated_time" content="2017-01-26T23:24:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vim最少必要知识">
+<meta name="twitter:description" content="版权申明：此文章首发于公众号程序员在深圳，搜索 studycode 即可关注本文无需授权即可转载，甚至无需保留以上版权声明
+
+一. Vim是什么都说程序员只用两种编辑器，一种是编辑器之神Vim，一种是神的编辑器Emacs，可现实生活中，我发现真正用这两种编辑器的人很少，所以我开始有点怀疑这句话的真实性。
+刚毕业那会，我对实际的软件开发了解甚少，于是糊里糊涂的进入了服务器开发领域，现在回想起来真">
+<meta name="twitter:image" content="http://oekyukinw.bkt.clouddn.com/vime.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://jieniu.me/2017/01/27/vim/"/>
+
+
+  <title> Vim最少必要知识 | 解牛的博客 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-86907063-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b9daf9f85321a5058027184595157277";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">解牛的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">不是庖丁，但有一颗刨根问底的心</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Vim最少必要知识
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-27T07:06:59+08:00" content="2017-01-27">
+              2017-01-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Vim/" itemprop="url" rel="index">
+                    <span itemprop="name">Vim</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/27/vim/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/27/vim/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://oekyukinw.bkt.clouddn.com/vime.png" alt="题图"></p>
+<blockquote>
+<p><em>版权申明：</em><br><em>此文章首发于公众号<code>程序员在深圳</code>，搜索 <code>studycode</code> 即可关注</em><br><em>本文无需授权即可转载，甚至无需保留以上版权声明</em></p>
+</blockquote>
+<h1 id="一-Vim是什么"><a href="#一-Vim是什么" class="headerlink" title="一. Vim是什么"></a>一. Vim是什么</h1><p>都说程序员只用两种编辑器，一种是编辑器之神Vim，一种是神的编辑器Emacs，可现实生活中，我发现真正用这两种编辑器的人很少，所以我开始有点怀疑这句话的真实性。</p>
+<p>刚毕业那会，我对实际的软件开发了解甚少，于是糊里糊涂的进入了服务器开发领域，现在回想起来真是觉得既幸运又后怕。幸运的是，在我完全不了解的情况下竟然选择了后端开发，后怕的是，既然不了解，就很可能选择到其他方向，而另一个选择可能会造就一个完全不同的人生轨迹。虽然从现在的眼光去看软件开发的每个方向，都非常有趣和有挑战，但服务器领域才是我最向往的地方，且它极大程度的满足了我的好奇心。</p>
+<p>不知道为什么，我对很古老的东西很感兴趣，服务器开发日常面对的是一个终端界面，没有图形化的丰富表现，只有常规的字符，让我着迷的肯定不是它的表现形式，更深层次的讲，它更接近于计算机最开始的样子，在这种环境下工作可以帮助我更容易的掌握机算机的原理和思想。</p>
+<p>区别于Windows这样的操作系统，Unix/Linux系统的设计原则是简约（<a href="https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6" target="_blank" rel="external">Kiss原则</a>），可能有点违背直觉，大多数人认为Windows更为容易上手，确实如此，但这并不意味着它的设计就是简单的，使用起来就是高效的。而Unix不同，其中的每一个程序都只完成单一的功能，程序之间可以很容易的交互数据，这样，通过将不同程序进行任意组合，可以创造出任意的功能，既匹配了程序员这一创造性工作，又极大的提升了工作效率。试比较——在同一目录下，将所有jpg后缀转换为png后缀的操作——在哪个系统上操作更为方便。</p>
+<blockquote>
+<p> Unix设计原则对于大多数程序员来说，是一种“信仰”，而Vim也是其中一个具备KISS原则的产品。</p>
+</blockquote>
+<p>所谓程序员只用两种编辑器，我现在似乎明白为什么使用它们的程序员实际上并不多的原因了，这句话缺少了一个时间的维度，在过去，图形界面不发达，人们用计算机只能使用命令行，在命令行中也只能使用Vim或Emacs编辑器，而随着时代的变迁，人们更倾向于使用易于上手的图形化软件，他们希望速成，不愿意在编辑器上花成本，而逐渐忘却了Vim或Emacs。时至今日，这句话变成了：</p>
+<blockquote>
+<p>程序员都用两种编辑器，大多数人使用图形化编辑器，少数人使用Vim或Emacs。</p>
+</blockquote>
+<h1 id="二-我为什么使用Vim"><a href="#二-我为什么使用Vim" class="headerlink" title="二. 我为什么使用Vim"></a>二. 我为什么使用Vim</h1><p>我为什么会选择Vim，一是因为Vim可以在所有操作系统及终端中使用，真正做到了“一招鲜，吃遍天”。学会了Vim，你再也不需要学习其他编辑器。</p>
+<p>相反，如果你使用IDE的话，可能这辈子要学习很多编辑器，例如当你使用C/C++时，你可能会用VS/SourceInsignt/SublimeText等，当你使用Java时，你可能会换成Eclipse/Android Studio，而当你做前端开发时，你需要学习使用WebStorm/Atom等。同时，这些IDE都无法在终端中运行，这时你要编码和调试，需要跨越两个环境，效率极低，如果你想改变这种现状，你还得学习Vim。</p>
+<p>而对于程序员来说，一个顺手的开发环境决定了他的开发效率和幸福指数，有时为了一个稳定又一致的开发环境，我会放弃公司的办公电脑，取而代之的是背一部几公斤重的笔记本来来回回。</p>
+<p>二是Vim的效率很高，它会想尽一切办法将你的双手放在主键盘区，甚至不需要碰小键盘或鼠标，更深一层，为了达到相同的目的，它会让你尽可能减少按键次数。这样做都是为了让你更加专注，集中精力去完成当前的工作，而右手经常在鼠标和键盘之间来回切换，无疑是一种“打断”。</p>
+<p>最后一个原因，使用Vim真的很酷，因为Vim学习曲线比较陡峭，即便对于程序员同学来说，它不好用，或是一头难以驯服的猛兽，所以在这种情况下，如果你可以把它运用自如，你拥有的就是别人从未有过的一种体验。</p>
+<h1 id="三-至少要掌握的知识"><a href="#三-至少要掌握的知识" class="headerlink" title="三. 至少要掌握的知识"></a>三. 至少要掌握的知识</h1><p>说Vim学习曲线陡峭，其实也是相对于其他编辑器来说的，其实也并没有多陡峭，下面主要从以5个概念，来谈一下Vim的最少必要知识，这是我平时使用Vim的过程中，总结出来的：对于一个新人，至少要知道哪些用法呢？</p>
+<ol>
+<li>模式</li>
+<li>命令</li>
+<li>窗口，Buffer</li>
+<li>配置</li>
+<li>插件</li>
+</ol>
+<h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><p>模式是Vim区别于其他编辑器的首要功能，它要解决的问题是“只使用键盘就可以完成所有工作”，你可以想象一下，当你在使用电脑时，克制自己不用鼠标或触控板时的感受：你也许会感觉非常无力吧。而当你在使用Vim时，这件事情不会给你带来任何不适，相反如果你适应了Vim的模式后，看到别人的右手在键盘和鼠标之间来回切换，你才会觉得那个人的效率和自己比起来是多么低效。</p>
+<p>Vim中的三个模式分别是</p>
+<ol>
+<li>普通模式normal</li>
+<li>插入模式insert</li>
+<li>可视模式visual</li>
+</ol>
+<p>普通模式相对于插入模式，它用来控制光标移动、复制/粘贴文本、排版等，并将这些功能映射到指定的快捷键中，这样当你输入一个按键，它就会帮你完成以上功能。</p>
+<h3 id="lt-Esc-gt"><a href="#lt-Esc-gt" class="headerlink" title="&lt;Esc&gt;"></a><code>&lt;Esc&gt;</code></h3><p><code>&lt;Esc&gt;</code>按键帮你从其他模式切换到普通模式，所以当苹果在最新版的macbook pro中取消<code>&lt;esc&gt;</code>按键时，一大批Vimer第一个反应就是macbook pro不适合开发者，不过我觉得这应该不是什么大问题，在切换到Vim时，肯定会弹出相应的虚拟按键，只是手感上应该会差很多，但如果要追求更好的手感，我推荐你去外接一个机械键盘，真的不一样。</p>
+<h3 id="h-j-k-l"><a href="#h-j-k-l" class="headerlink" title="h/j/k/l"></a>h/j/k/l</h3><p>这四个键在键盘的最中间，当你处于普通模式时，h/j/k/l这四个按键分别代表了光标向左/下/上/右移动一个字符，当然你完全不需进行刻意的记忆，打开电脑练习几次就习惯了。学会了这几个按键，你的手指再也不需要移动到小键盘上去了。</p>
+<p><img src="http://oekyukinw.bkt.clouddn.com/hjkl.jpg" alt="hjkl"></p>
+<p><em>移动</em></p>
+<h3 id="ctrl-f-b-d-u"><a href="#ctrl-f-b-d-u" class="headerlink" title="ctrl+f/b/d/u"></a>ctrl+f/b/d/u</h3><p>这四个快捷键，可以帮助你翻页，实现光标在文件中快速移动。</p>
+<ul>
+<li>ctrl+f：向下翻一页</li>
+<li>ctrl+b：向上翻一页</li>
+<li>ctrl+d：向上翻半页</li>
+<li>ctrl+u：向下翻半页</li>
+</ul>
+<p><em>移动</em></p>
+<h3 id="b-w-e-shift-shift"><a href="#b-w-e-shift-shift" class="headerlink" title="b/w/e/shift+^/shift+$"></a>b/w/e/shift+^/shift+$</h3><p>普通模式下，h和l每次只能向左或向右移动一个字符，这无疑是非常慢的，下面几个快捷键，可以帮助你在行内快速移动</p>
+<ul>
+<li>b：将光标移动到上一个单词的第一个字符</li>
+<li>w：将光标移动到下一个单词的第一个字符</li>
+<li>e：将光标移动到下一个单词的最后一个字符</li>
+<li>shift+^：将光标移动到行首</li>
+<li>shift+$：将光标移动到行尾</li>
+</ul>
+<p><em>移动</em></p>
+<h3 id="f-F’a’"><a href="#f-F’a’" class="headerlink" title="f/F’a’"></a>f/F’a’</h3><p>在行内快速移动的“升级版”，单引号中的内容可以用任意字符代替，例如f’b’/F’b’</p>
+<ul>
+<li>fa：将光标移到右边的第一个字符a上，继续按’;’（分号），可以延相同的方向找到下一个a，继续按’,’（逗号），可以延反方向找到下一个a</li>
+<li>Fa：将光标移到左边的第一个字符a上，继续按’;’（分号），可以延相同的方向找到下一个a，继续按’,’（逗号），可以延反方向找到下一个a</li>
+</ul>
+<p>当你熟练使用这个快捷键，你就知道我为什么会说：</p>
+<blockquote>
+<p>Vim会尽量减少你敲键盘的次数</p>
+</blockquote>
+<p><em>移动</em></p>
+<h3 id="H-M-L"><a href="#H-M-L" class="headerlink" title="H/M/L"></a>H/M/L</h3><p>这几个快捷键，可以帮你把光标移动到屏幕的上方/中间/下方，注意是要打开大写锁定或按住shift</p>
+<ul>
+<li>H(high)：将光标移动到屏幕上方</li>
+<li>M(middle)：将光标移动到屏幕中间</li>
+<li>L(low)：将光标移动到屏幕下方</li>
+</ul>
+<p><em>移动</em></p>
+<h3 id="n-jk"><a href="#n-jk" class="headerlink" title="[n]jk"></a>[n]jk</h3><p>中括号中的n可以用任意数字代替，例如10j表示将光标向下移动10行，而10k则相反</p>
+<ul>
+<li>[n]j：将光标向下移动n行</li>
+<li>[n]k：将光标向上移动n行</li>
+</ul>
+<p><em>移动</em></p>
+<h3 id="n-G"><a href="#n-G" class="headerlink" title="[n]G"></a>[n]G</h3><p>同[n]jk命令，[n]G命令会帮你把光标移动到指定的行数，例如100G，会将光标移动到文件的第100行</p>
+<p><em>移动</em></p>
+<h3 id="gg-G"><a href="#gg-G" class="headerlink" title="gg/G"></a>gg/G</h3><p>这两个快捷键，会将光标移动到文档的第一行或最后一行</p>
+<ul>
+<li>gg：将光标移动到文档的第一行</li>
+<li>G：将光标移动到文档的最后一行</li>
+</ul>
+<p><em>移动</em></p>
+<h3 id="zz"><a href="#zz" class="headerlink" title="zz"></a>zz</h3><p>这个快捷键会将当前光标所在行居中</p>
+<p><em>移动</em></p>
+<h3 id=""><a href="#" class="headerlink" title="%"></a>%</h3><p>该快捷键实质上是shift+5两个键的组合，可以让你的光标在成对的括号间跳转，例如大括号、圆括号、方括号等，该功能在写代码时经常使用。</p>
+<p><em>移动</em></p>
+<h3 id="n-N"><a href="#n-N" class="headerlink" title="*/#/n/N"></a>*/#/n/N</h3><ul>
+<li><code>*</code>：在文件中查找光标下的单词(向下)，如果要继续查找，可以按n向下查找，按N反向查找</li>
+<li><code>#</code>：在文件中查找光标下的单词(向上)，如果要继续查找，可以按n向上查找，按N反向查找</li>
+</ul>
+<p><em>移动</em></p>
+<h3 id="、-、-、"><a href="#、-、-、" class="headerlink" title="[[、]]、{、}"></a>[[、]]、{、}</h3><p>这套指令也特别容易记忆，因为大括号或花括号的方向即是你的光标所移动的方向</p>
+<ul>
+<li>[[：将光标移动到上一个代码段（或函数）的行首</li>
+<li>]]：将光标移动到下一个代码段（或函数）的行首</li>
+<li>{：将光标移动到上一个空行行首</li>
+<li>}：将光标移动到下一个空行行首</li>
+</ul>
+<p><img src="http://oekyukinw.bkt.clouddn.com/move2.gif" alt="关注光标变化"></p>
+<p>以上是在普通模式中最常用的移动操作，熟练掌握以上操作，Vim便成了你手中的“六脉神剑”，可以任由你“指哪打哪”了。</p>
+<h3 id="u-ctrl-r"><a href="#u-ctrl-r" class="headerlink" title="u/ctrl+r"></a>u/ctrl+r</h3><ul>
+<li>u：撤销</li>
+<li>ctrl+r ：重做</li>
+</ul>
+<p><em>编辑</em></p>
+<h3 id="y-yy-p-P-”y-”p"><a href="#y-yy-p-P-”y-”p" class="headerlink" title="y/yy/p/P/+”y/+”p"></a>y/yy/p/P/+”y/+”p</h3><p>这几个命令表示基本的复制和粘贴</p>
+<ul>
+<li>y：复制，比较常用的是先进入可视模式，然后按y，复制所选文本</li>
+<li>yy：复制一整行</li>
+<li>p：从光标右边开始粘贴，注意不能粘贴到Vim外的程序中</li>
+<li>P：大P，从光标左边开始粘贴</li>
+<li>+”y：复制到系统剪贴板，这样就可以粘贴到Vim外面去了</li>
+<li>+”p：将Vim外复制的内容粘贴进来</li>
+</ul>
+<p>+”y/p这种三个键的快捷键不是很方便，所以我们可以在vim中建立按键映射，将它的操作简化，例如在~/.vimrc（没有该文件的情况下要手动创建）中加入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">" 定义快捷键的前缀，即&lt;Leader&gt;</span></div><div class="line">let mapleader="<span class="string">'"</span></div><div class="line">" 在可视模式下，'+y则为复制到剪贴板</div><div class="line">vnoremap &lt;Leader&gt;y <span class="string">"+y </span></div><div class="line">" 普通模式下，<span class="string">'+p则为从剪贴板粘贴到Vim</span></div><div class="line">nmap &lt;Leader&gt;p "+p</div></pre></td></tr></table></figure>
+<p><em>编辑</em></p>
+<h3 id="a-i-A-I-r-cc-cw"><a href="#a-i-A-I-r-cc-cw" class="headerlink" title="a/i/A/I/r/cc/cw"></a>a/i/A/I/r/cc/cw</h3><p>这几个快捷键可以帮助你编辑文本</p>
+<ul>
+<li>a：从光标右边开始插入，进入插入模式</li>
+<li>i：从光标左边开始插入，进入插入模式</li>
+<li>A：从行尾插入，进入插入模式</li>
+<li>I：从行首插入，进入插入模式</li>
+<li>r：替换光标下的字符，不进入插入模式，例如rx，将光标下的字符替换为x</li>
+<li>cc：修改光标所在行，进入插入模式</li>
+<li>cw：修改光标开始以右的单词，这个组合键在编码的时候也经常使用，Vim中的组合键由<code>动作</code>+ <code>范围</code>组成，如<code>c</code>为修改动作，<code>w</code>为一个单词的范围，再如<code>d2j</code>表示：删除光标所在行及下一行，其中<code>d</code>为删除动作，<code>2j</code>为下两行</li>
+</ul>
+<p><em>编辑</em></p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="."></a>.</h3><p>点号键可以帮你重复上次编辑操作，例如你想手动将文件中所有的int转换为int64，只需要：</p>
+<ol>
+<li>进入普通模式，将光标移到int下</li>
+<li>敲击*查找int</li>
+<li>敲击cw替换int，输入int64</li>
+<li>按ESC继续进入普通模式</li>
+<li>敲击n查找下一个int</li>
+<li>敲击.重复执行替换，然后继续执行第5步骤</li>
+</ol>
+<p><em>编辑</em></p>
+<p>插入模式没什么可说的，在这种模式下和其他编辑器没有什么区别，下面说下可视模式</p>
+<h3 id="v-V-ctrl-v"><a href="#v-V-ctrl-v" class="headerlink" title="v/V/ctrl+v"></a>v/V/ctrl+v</h3><p><code>v</code>、<code>V</code>或<code>ctrl+v</code>进入可视模式，在这种模式下你可以自由选择你需要操作的文本，然后进行批量操作</p>
+<ul>
+<li>v：进入可视模式，按[n]hjkl调整范围，n代表分别对hjkl做的次数，例如v10l表示选择光标右边的10个字符</li>
+<li>V：选择光标下的行，V10j表示选择光标及光标下的10行</li>
+<li>ctrl+v：可以选择一个块状的区域，这个功能能够很好的帮你完成块注释或块反注释</li>
+</ul>
+<p>下图展示了我将某一个代码块注释掉的动作</p>
+<ul>
+<li>首先ctrl+v，然后敲击6j，垂直选择6行</li>
+<li>输入<code>:s,^,//,|noh</code>将行首替换为注释符号<code>//</code>，noh是禁止高亮的意思</li>
+</ul>
+<p><img src="http://oekyukinw.bkt.clouddn.com/visual_mode.gif" alt="visual_mode"></p>
+<p><em>选择</em></p>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>在Vim中可以通过输入命令的方式进行交互，在普通模式下，输入<code>:</code>调出命令栏——Vim最底部的一栏，命令分为两种</p>
+<ol>
+<li>Vim调用shell的命令，前面要加一个感叹号，例如输入<code>:!pwd</code>执行<code>pwd</code></li>
+<li>Vim内置或用户通过插件实现的命令，例如下面的几个常用命令</li>
+</ol>
+<h3 id="-2"><a href="#-2" class="headerlink" title=":/ :?"></a>:/ :?</h3><p>查找命令</p>
+<ul>
+<li>:/id：从当前光标向下查找文件中的id字符串，为了方便，你可以直接敲击<code>/id</code></li>
+<li>:?id：从当前光标向上查找文件中的id字符串，为了方便，你可以直接敲击<code>?id</code></li>
+</ul>
+<h3 id="s-Id-ID-g"><a href="#s-Id-ID-g" class="headerlink" title=":%s,Id,ID,g"></a>:%s,Id,ID,g</h3><p>:s为替换命令，上文可视模式中已经展示了批量替换的威力，另外一种比较常用的是全文替换，例如<code>:%s,Id,ID,g</code>表示将全文中的Id替换为ID，<code>g</code>的意思是一行里面如果有多个匹配项，则都进行替换，和<code>sed</code>中的替换是一个概念</p>
+<h3 id="q-w-x-e"><a href="#q-w-x-e" class="headerlink" title=":q :w :x :e"></a>:q :w :x :e</h3><p>学到这里你已经掌握了Vim中的基本用法，现在可以退出休息一下了:)</p>
+<ul>
+<li>:q 退出</li>
+<li>:w 保存</li>
+<li>:x 保存并退出</li>
+<li>:e 编辑文件，不存在则创建，例如<code>:e ~/.vimrc</code>会编辑<code>~/.vimrc</code>这个文件</li>
+</ul>
+<h3 id="help"><a href="#help" class="headerlink" title=":help"></a>:help</h3><p>即便看完了以上内容，你可以顺使用Vim了，但最好还是浏览一遍帮助文档，这样当你遇到某个问题时，可以通过help进行查找。</p>
+<h2 id="Window-Buffer"><a href="#Window-Buffer" class="headerlink" title="Window,Buffer"></a>Window,Buffer</h2><p>Vim一次可以打开多个文件，同时打开的文件暂存在Buffer对象中，每个打开的文件对应一个buffer对象，你可以选择性的通过打开某个Buffer来显示对应的文件，而一旦该文件显示出来，用来显示该文件的窗口被称为Window，如果你的屏幕够大，你可以把Vim分成多个窗口，即实现了多个文件同时进行编辑的功能，非常方便你编写代码。这也是Vim和其他编辑器在理念上不一样的地方，其他编辑器使用Tab来打开多个文件，虽然Vim也有Tab功能，但Window+Buffer的方式更符合习惯</p>
+<h3 id="split-vsplit-ctrl-w-h-j-k-l"><a href="#split-vsplit-ctrl-w-h-j-k-l" class="headerlink" title=":split vsplit ctrl-w+h/j/k/l"></a>:split vsplit ctrl-w+h/j/k/l</h3><p>这几个是Vim中操作窗口的命令</p>
+<ul>
+<li>:split 将光标所在的Window分为上下两个窗口</li>
+<li>:vsplit 将光标所在的Window分为左右两个窗口</li>
+<li>ctrl-w h/j/k/l 帮助你在不同窗口间进行切换，h/j/k/l分别代表了切换到左/下/上/右窗口</li>
+</ul>
+<p>看完了以上内容，再看这幅浓缩图，就会觉得格外清晰</p>
+<p><img src="http://oekyukinw.bkt.clouddn.com/Vimpics.jpg" alt="pic"></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Vim是高度可定制的编辑器，你可以通过配置从而把它打造成一个非常强大的IDE，而所有的配置基本上都在<code>~/.vimrc</code>中完成，非常方便管理，网上讲配置的文章和文档非常多，相信你可以在网上找到你想要的内容。</p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>插件本质上是配置的一种，而掌握了Vim插件的安装和使用后，你就可以将Vim运用到实际工作中了，基本的逻辑是，先明确自己的需求，然后在google中搜索对应的关键字便可以找到你所需要的插件，这里就介绍一个非常重要的插件</p>
+<h3 id="NERDTree"><a href="#NERDTree" class="headerlink" title="NERDTree"></a>NERDTree</h3><p><a href="https://github.com/scrooloose/nerdtree" target="_blank" rel="external">NERDTree</a>插件配合窗口功能非常好用，NERDTree插件可以帮你列出系统中的目录和文件树，打开其中文件的同时，还可以帮你进行分屏，有了这样的插件，你应该会更得心应手。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="Jieniu wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vim/" rel="tag">#Vim</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/11/really-read/" rel="next" title="我的阅读理解升级之路">
+                <i class="fa fa-chevron-left"></i> 我的阅读理解升级之路
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/27/vim/"
+           data-title="Vim最少必要知识" data-url="http://jieniu.me/2017/01/27/vim/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oekyukinw.bkt.clouddn.com/WechatIMG1.jpeg"
+               alt="Jieniu" />
+          <p class="site-author-name" itemprop="name">Jieniu</p>
+          <p class="site-description motion-element" itemprop="description">专注成长</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jieniu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/fengyajie" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-Vim是什么"><span class="nav-number">1.</span> <span class="nav-text">一. Vim是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-我为什么使用Vim"><span class="nav-number">2.</span> <span class="nav-text">二. 我为什么使用Vim</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-至少要掌握的知识"><span class="nav-number">3.</span> <span class="nav-text">三. 至少要掌握的知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模式"><span class="nav-number">3.1.</span> <span class="nav-text">模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-Esc-gt"><span class="nav-number">3.1.1.</span> <span class="nav-text"><Esc></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#h-j-k-l"><span class="nav-number">3.1.2.</span> <span class="nav-text">h/j/k/l</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ctrl-f-b-d-u"><span class="nav-number">3.1.3.</span> <span class="nav-text">ctrl+f/b/d/u</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-w-e-shift-shift"><span class="nav-number">3.1.4.</span> <span class="nav-text">b/w/e/shift+^/shift+$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#f-F’a’"><span class="nav-number">3.1.5.</span> <span class="nav-text">f/F’a’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#H-M-L"><span class="nav-number">3.1.6.</span> <span class="nav-text">H/M/L</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n-jk"><span class="nav-number">3.1.7.</span> <span class="nav-text">[n]jk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n-G"><span class="nav-number">3.1.8.</span> <span class="nav-text">[n]G</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gg-G"><span class="nav-number">3.1.9.</span> <span class="nav-text">gg/G</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zz"><span class="nav-number">3.1.10.</span> <span class="nav-text">zz</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">3.1.11.</span> <span class="nav-text">%</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n-N"><span class="nav-number">3.1.12.</span> <span class="nav-text">*/#/n/N</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#、-、-、"><span class="nav-number">3.1.13.</span> <span class="nav-text">[[、]]、{、}</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u-ctrl-r"><span class="nav-number">3.1.14.</span> <span class="nav-text">u/ctrl+r</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#y-yy-p-P-”y-”p"><span class="nav-number">3.1.15.</span> <span class="nav-text">y/yy/p/P/+”y/+”p</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-i-A-I-r-cc-cw"><span class="nav-number">3.1.16.</span> <span class="nav-text">a/i/A/I/r/cc/cw</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">3.1.17.</span> <span class="nav-text">.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-V-ctrl-v"><span class="nav-number">3.1.18.</span> <span class="nav-text">v/V/ctrl+v</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-number">3.2.</span> <span class="nav-text">命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#-2"><span class="nav-number">3.2.1.</span> <span class="nav-text">:/ :?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#s-Id-ID-g"><span class="nav-number">3.2.2.</span> <span class="nav-text">:%s,Id,ID,g</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-w-x-e"><span class="nav-number">3.2.3.</span> <span class="nav-text">:q :w :x :e</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#help"><span class="nav-number">3.2.4.</span> <span class="nav-text">:help</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Window-Buffer"><span class="nav-number">3.3.</span> <span class="nav-text">Window,Buffer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#split-vsplit-ctrl-w-h-j-k-l"><span class="nav-number">3.3.1.</span> <span class="nav-text">:split vsplit ctrl-w+h/j/k/l</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">3.4.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-number">3.5.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NERDTree"><span class="nav-number">3.5.1.</span> <span class="nav-text">NERDTree</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jieniu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jieniu"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = decodeURIComponent(data.url);
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
